@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/tab_home"
+        android:icon="@mipmap/hover"
+        android:title="@string/app_tab_home" />
+    <item
+        android:id="@+id/tab_user"
+        android:icon="@mipmap/user"
+        android:title="@string/app_tab_user" />
+    <item
+        android:id="@+id/tab_message"
+        android:icon="@mipmap/message"
+        android:title="@string/app_tab_message" />
+    <item
+        android:id="@+id/tab_mine"
+        android:icon="@mipmap/my"
+        android:title="@string/app_tab_mine" />
+</menu>

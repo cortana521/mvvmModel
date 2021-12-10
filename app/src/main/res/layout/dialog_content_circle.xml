@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/popup_white_shape_10"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/text_draw_dot"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_45"
+        android:background="?android:attr/selectableItemBackground"
+        android:clickable="true"
+        android:gravity="center"
+        android:text="拍照"
+        android:textColor="@color/tab_sel_color"
+        android:textSize="14sp" />
+
+    <View style="@style/ViewLineHorizontalContent" />
+
+    <TextView
+        android:id="@+id/text_draw_line"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_45"
+        android:background="?android:attr/selectableItemBackground"
+        android:clickable="true"
+        android:gravity="center"
+        android:text="相册"
+        android:textColor="@color/tab_sel_color"
+        android:textSize="14sp" />
+
+    <View style="@style/ViewLineHorizontalContent" />
+
+    <TextView
+        android:id="@+id/text_draw_arrow"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_45"
+        android:background="?android:attr/selectableItemBackground"
+        android:clickable="true"
+        android:gravity="center"
+        android:text="取消"
+        android:textColor="@color/tab_sel_color"
+        android:textSize="14sp" />
+
+</LinearLayout>

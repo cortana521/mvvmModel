@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="gray_1">#111111</color>
+    <color name="gray_2">#222222</color>
+    <color name="gray_3">#333333</color>
+    <color name="gray_4">#444444</color>
+    <color name="gray_5">#555555</color>
+    <color name="gray_6">#666666</color>
+    <color name="gray_7">#777777</color>
+    <color name="gray_8">#888888</color>
+    <color name="gray_9">#999999</color>
+    <color name="gray_a">#AAAAAA</color>
+    <color name="gray_b">#BBBBBB</color>
+    <color name="gray_c">#CCCCCC</color>
+    <color name="gray_d">#DDDDDD</color>
+    <color name="gray_e">#EEEEEE</color>
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+
+    <color name="f1">#F1F1F1</color>
+    <color name="f2">#F2F2F2</color>
+    <color name="f3">#F3F3F3</color>
+    <color name="f4">#F4F4F4</color>
+    <color name="f5">#F5F5F5</color>
+    <color name="f6">#F6F6F6</color>
+    <color name="f7">#F7F7F7</color>
+    <color name="f8">#F8F8F8</color>
+    <color name="f9">#F9F9F9</color>
+
+    <!--公用颜色设置-->
+    <color name="colorEditHint">#A8988f</color>
+    <color name="colorEditText">#86603A</color>
+    <color name="colorButton">#C7A067</color>
+    <color name="colorTvButton">#A8988f</color>
+    <color name="colorGetVCode">#FFFFFF</color>
+    <color name="colorBackground">#EEEEEE</color>
+    <color name="colorMedicinalItem">#E15544</color>
+    <color name="colorStatusBar">#66999999</color>
+
+    <color name="FFC115">#FFC115</color>
+    <color name="C0C0C0">#C0C0C0</color>
+    <color name="F2F2F2">#F2F2F2</color>
+    <color name="F3F3F3">#F3F3F3</color>
+    <color name="BCBCBC">#BCBCBC</color>
+    <color name="black4">#555555</color>
+    <color name="black5">#cccccc</color>
+    <color name="black3">#333333</color>
+    <color name="black6">#666666</color>
+    <color name="black8">#888888</color>
+    <color name="black9">#999999</color>
+    <color name="F9CA1">#9F9CA1</color>
+    <color name="DBDBDB">#DBDBDB</color>
+    <color name="EAC453">#EAC453</color>
+    <color name="FB4D44">#FB4D44</color>
+    <color name="colorPrimary">#B59366</color>
+
+    <color name="editLineColor">#A8988f</color>
+    <color name="black101">#101011</color>
+    <color name="FFA800">#FFA800</color>
+    <color name="toolbarTextColor">#333333</color>
+    <color name="divider_line_color">#E2E2E2</color>
+    <color name="divider_list_color">#DCDCDC</color>
+    <color name="shape_status_bg">#C9A063</color>
+    <color name="tabTextColor">#aaaaaa</color>
+    <color name="payMoneyColor">#DB5552</color>
+    <color name="divider_line_color2">#f2f2f2</color>
+    <color name="F8F8F8">#F8F8F8</color>
+    <color name="F5F5F5">#F5F5F5</color>
+    <color name="D27E00">#D27E00</color>
+    <color name="D484848">#484848</color>
+    <color name="menu_color">#1976D2</color>
+
+    <color name="colorAccent">#D81B60</color>
+    <color name="gray">#5000</color>
+    <color name="black_type">#333333</color>
+    <color name="line">#e5e5e5</color>
+    <color name="main">#2395FF</color>
+    <color name="button">#3e86e3</color>
+    <color name="status">#eb3a18</color>
+    <color name="status_bas">#ea514b</color>
+    <color name="tab_button">#5094f3</color>
+    <color name="start_welcome">#d3eeff</color>
+    <color name="lucency">#30000000</color>
+    <color name="text_color">#999999</color>
+    <color name="text_8_color">#888888</color>
+    <color name="text_song_color">#666666</color>
+    <color name="layer_color">#a1a3a6</color>
+    <color name="view_line">#2a7ae2</color>
+    <color name="tab_nor_color">#969696</color>
+    <color name="tab_background_color">#f2f2f2</color>
+    <color name="tab_sel_color">#2395FF</color>
+    <color name="vacation_color">#e2ce9c</color>
+    <color name="vacation_text_color">#b0a079</color>
+    <color name="circle_one_color">#33a0f0</color>
+    <color name="circle_two_color">#68b9f2</color>
+    <color name="circle_three_color">#e95e49</color>
+    <color name="circle_four_color">#ef7340</color>
+    <color name="circle_five_color">#f79954</color>
+    <color name="circle_six_color">#ffbc45</color>
+    <color name="circle_seven_color">#ffcc71</color>
+    <color name="circle_eight_color">#00a294</color>
+    <color name="circle_nine_color">#20b6ab</color>
+    <color name="approval_color">#f3674d</color>
+    <color name="color_transparent">#00000000</color>
+    <color name="color_e84515">#e84515</color>
+    <color name="color_d8d8d8">#d8d8d8</color>
+    <color name="color_323232">#323232</color>
+    <color name="province_line_border">#D0D0D0</color>
+    <color name="text_show_color">#666666</color>
+    <color name="line_color">#1f1f1f</color>
+    <color name="line_view_color">#f1f1f1</color>
+    <color name="background_color">#161616</color>
+    <color name="text_type_color">#999999</color>
+    <color name="line_color_type">#eeeeee</color>
+    <color name="background_type_color">#b5b5b5</color>
+    <color name="line_type_color">#dddddd</color>
+    <color name="text_type_two_color">#f88100</color>
+    <color name="text_integral_color">#fb9c00</color>
+    <color name="text_type_shree_color">#cccccc</color>
+    <color name="text_type_four_color">#333333</color>
+    <color name="text_reply_color">#5094f3</color>
+    <color name="text_type_sign">#5e97f6</color>
+    <color name="text_type_one_color">#f3674d</color>
+    <color name="text_type_read_color">#f95051</color>
+    <color name="colorRedBg">#fa5148</color>
+    <color name="system_bar_background_semi_transparent">#66000000</color> <!-- 40% black -->
+    <color name="alertdialog_line">#c6c6c6</color>
+    <color name="actionsheet_blue">#037BFF</color>
+    <color name="actionsheet_red">#FD4A2E</color>
+    <color name="actionsheet_gray">#8F8F8F</color>
+    <color name="welcome">#3e86e3</color>
+    <color name="edit_hint">#cccccc</color>
+    <color name="background_color_type">#f2f2f2</color>
+    <color name="wage_map">#99c6ff</color>
+    <color name="transparent">#00000000</color>
+    <color name="text_photo_add">#e94018</color>
+    <color name="text_card_color">#0475e5</color>
+    <color name="text_left_color">#ffb133</color>
+
+    <color name="__picker_pager_bg">#CA000000</color>
+    <color name="__picker_crop_toolbar_bg">#38393E</color>
+    <color name="__picker_crop_status_bg">#2F3034</color>
+    <color name="simple_toolbar">#D9503E</color>
+
+    <color name="__picker_selected_bg">#44000000</color>
+    <color name="__picker_black_40">#282828</color>
+    <color name="__picker_common_primary">#f3f3f3</color>
+
+    <color name="__picker_text_40">#282828</color>
+    <color name="__picker_text_80">#505050</color>
+    <color name="__picker_text_120">#787878</color>
+    <color name="__picker_item_photo_border_selected">#ff99cc00</color>
+    <color name="__picker_item_photo_border_n">#33ffffff</color>
+
+    <color name="date_picker_text_dark">#333333</color>
+    <color name="dafdsf">#5e97f6</color>
+
+</resources>

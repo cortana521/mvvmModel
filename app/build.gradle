@@ -1,0 +1,118 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion 30
+    buildToolsVersion "30.0.2"
+
+    defaultConfig {
+        applicationId "com.byl.mvvm"
+        minSdkVersion 19
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+        flavorDimensions versionName
+        //如果存在kotlin和java代码必须配置下面的代码
+        kapt {
+            arguments {
+                arg("moduleName", project.getName())
+                arg("AROUTER_MODULE_NAME",project.getName())
+            }
+            generateStubs = true
+        }
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+
+    dataBinding {
+        enabled = true
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            //是否优化zip
+            zipAlignEnabled true
+            // 移除无用的resource文件
+            shrinkResources true
+            //启用代码混淆
+            minifyEnabled true
+            //混淆规则配置文件
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+
+    buildFeatures {
+        viewBinding = true
+    }
+
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'androidx.core:core-ktx:1.2.0'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    implementation 'androidx.coordinatorlayout:coordinatorlayout:1.1.0'
+    implementation 'androidx.recyclerview:recyclerview:1.1.0'
+
+    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.2.0'
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0'
+    implementation 'com.google.android.material:material:1.1.0'
+
+
+    //glide图片加载框架
+    final GLIDE_VERSION = '4.11.0'
+    implementation "com.github.bumptech.glide:glide:$GLIDE_VERSION"
+    implementation "com.github.bumptech.glide:okhttp3-integration:$GLIDE_VERSION"
+    implementation 'jp.wasabeef:glide-transformations:3.3.0'
+
+    //网络请求框架
+    final RETROFIT_VERSION = '2.8.1'
+    implementation "com.squareup.retrofit2:retrofit:$RETROFIT_VERSION"
+    implementation "com.squareup.retrofit2:converter-gson:$RETROFIT_VERSION"
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.9.0'
+
+    //网络请求cookie缓存
+    implementation 'com.github.franmontiel:PersistentCookieJar:v1.0.1'
+
+    //PhotoView
+    implementation 'com.github.chrisbanes:PhotoView:2.3.0'
+
+    //刷新框架
+    implementation 'com.scwang.smartrefresh:SmartRefreshLayout:1.1.0-andx-11'
+    implementation 'com.scwang.smartrefresh:SmartRefreshHeader:1.1.0-andx-11'
+
+    //EventBus
+    implementation 'org.greenrobot:eventbus:3.2.0'
+    //noinspection GradleCompatible
+    implementation 'com.android.support:design:27.1.1'
+
+    //AndroidUtilCode 是一个强大易用的安卓工具类库
+    implementation 'com.blankj:utilcodex:1.30.6'
+
+    //阿里路由
+    //ARouter(进行activity,fragment的跳转以及传值)
+    implementation 'com.alibaba:arouter-api:1.4.1'
+    annotationProcessor 'com.alibaba:arouter-compiler:1.2.2'
+
+    //多级联动控件
+    api 'com.contrarywind:Android-PickerView:4.1.9'
+}

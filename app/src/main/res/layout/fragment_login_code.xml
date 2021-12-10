@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginRight="50dp"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <com.byl.mvvm.widget.ClearEditText
+            android:id="@+id/et_login_username"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:hint="请输入手机号"
+            android:inputType="phone"
+            android:lines="1"
+            android:maxLength="11"
+            android:textColor="@color/colorEditText"
+            android:textColorHint="@color/colorEditHint"
+            android:textSize="@dimen/text_dimen_15"
+            android:theme="@style/MyEditText" />
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp">
+
+            <EditText
+                android:id="@+id/et_login_code"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="请输入验证码"
+                android:inputType="number"
+                android:lines="1"
+                android:maxLength="6"
+                android:textColor="@color/colorEditText"
+                android:textColorHint="@color/colorEditHint"
+                android:textSize="@dimen/text_dimen_15"
+                android:theme="@style/MyEditText" />
+
+            <TextView
+                android:id="@+id/tv_login_get_code"
+                android:layout_width="@dimen/dp_90"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:gravity="center_horizontal"
+                android:background="@drawable/selector_get_code"
+                android:text="获取验证码"
+                android:textColor="@color/colorGetVCode"
+                android:textSize="@dimen/text_dimen_14" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ll_layout"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginRight="50dp"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:paddingBottom="15dp">
+
+        <TextView
+            android:id="@+id/tv_login"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/shape_login_btn"
+            android:gravity="center"
+            android:text="登 录"
+            android:textColor="@color/white"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+    <include layout="@layout/layout_type" />
+</LinearLayout>

@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">金草</string>
+    <string name="app_tab_home">首页</string>
+    <string name="app_tab_user">用户</string>
+    <string name="app_tab_message">消息</string>
+    <string name="app_tab_mine">我的</string>
+    <string name="def_back_left_con">""</string>
+    <string name="def_back_right_con">""</string>
+    <string name="app_home_title">金草中医</string>
+    <string name="app_home_user">用户</string>
+    <string name="app_home_mssage">消息</string>
+    <string name="app_home_mine">我的</string>
+    <string name="app_determine_btn">确定</string>
+    <string name="app_cancel_btn">取消</string>
+    <string name="app_code_btn">验证码登录</string>
+    <string name="app_password_btn">密码登录</string>
+    <string name="app_login_btn">登  录</string>
+    <string name="app_register_btn">注  册</string>
+    <string name="app_forget_password">忘记密码?</string>
+    <string name="app_register_title">注册</string>
+    <string name="app_login_title">登录</string>
+    <string name="app_login_right_title">注册</string>
+    <string name="app_sex_man">男</string>
+    <string name="app_sex_gril">女</string>
+    <string name="app_photo">相册</string>
+    <string name="app_camera">相机</string>
+    <string name="app_city">选择城市</string>
+    <string name="app_doctorProtocol"><u>《金草中医医生协议》</u></string>
+</resources>

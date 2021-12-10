@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 自定义top标题栏 -->
+    <declare-styleable name="CustomTopTitleBar">
+        <attr name="ctb_title" format="string" /> <!-- 标题栏文字描述 -->
+        <attr name="ctb_text_left" format="string" /> <!-- 左侧文字描述 -->
+        <attr name="ctb_text_right" format="string" /> <!-- 右侧文字描述 -->
+        <attr name="ctb_show_text_left" format="boolean" /> <!-- 是否显示左侧文字-->
+        <attr name="ctb_show_text_right" format="boolean" /> <!-- 是否显示右侧文字-->
+        <attr name="ctb_img_left" format="reference" /> <!-- 左侧IMG背景 -->
+        <attr name="ctb_img_right" format="reference" /> <!-- 右侧IMG背景-->
+        <attr name="ctb_show_img_left" format="boolean" /> <!-- 是否显示左侧IMG-->
+        <attr name="ctb_show_img_right" format="boolean" /> <!-- 是否显示右侧IMG-->
+        <attr name="ctb_back" format="color|reference" /> <!-- 标题栏背景色 -->
+        <attr name="ctb_show_line" format="boolean" /> <!-- 是否显示底部分割线-->
+    </declare-styleable>
+
+</resources>
