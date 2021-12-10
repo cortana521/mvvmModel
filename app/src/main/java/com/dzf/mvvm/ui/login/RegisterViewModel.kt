@@ -28,7 +28,7 @@ import com.google.gson.reflect.TypeToken
  * @ProjectName : MVVM
  * @Author : Dai Zhi Feng
  * @Time : 2021/11/5 16:37
- * @Description : 文件描述
+ * @Description : 注册数据
  */
 class RegisterViewModel : BaseViewModel<ActivityRegisterBinding>() {
     private val provinceItems = mutableListOf<String>()

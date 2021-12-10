@@ -16,7 +16,7 @@ import com.dzf.mvvm.ui.main.MainActivity
  * @ProjectName : MVVM
  * @Author : Dai Zhi Feng
  * @Time : 2021/10/28 10:52
- * @Description : 文件描述
+ * @Description : 密码登录数据
  */
 class PassWordViewModel : BaseViewModel<FragmentLoginPasswordBinding>() {
 

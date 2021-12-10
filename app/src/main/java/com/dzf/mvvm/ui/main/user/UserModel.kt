@@ -14,7 +14,7 @@ import com.dzf.mvvm.ui.main.model.ArticleListBean
  * @ProjectName : MVVM
  * @Author : Dai Zhi Feng
  * @Time : 2021/9/1 16:11
- * @Description : 文件描述
+ * @Description : 用户数据
  */
 class UserModel : BaseViewModel<FragmentUserBinding>(){
 

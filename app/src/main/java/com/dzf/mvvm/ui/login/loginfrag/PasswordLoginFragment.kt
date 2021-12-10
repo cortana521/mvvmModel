@@ -17,7 +17,7 @@ import com.dzf.mvvm.utils.CommonlyUsedInterface
  * @ProjectName : MVVM
  * @Author : Dai Zhi Feng
  * @Time : 2021/10/28 10:51
- * @Description : 文件描述
+ * @Description : 密码登录
  */
 class PasswordLoginFragment : BaseFragment<PassWordViewModel, FragmentLoginPasswordBinding>(),
     View.OnClickListener {
