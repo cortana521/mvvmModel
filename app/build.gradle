@@ -8,7 +8,7 @@ android {
     buildToolsVersion "30.0.2"
 
     defaultConfig {
-        applicationId "com.byl.mvvm"
+        applicationId "com.dzf.mvvm"
         minSdkVersion 19
         targetSdkVersion 29
         versionCode 1

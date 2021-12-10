@@ -23,7 +23,7 @@ class TestEventActivity :
     }
 
     override fun initClick() {
-        vb.btn.clicks {
+        vb.btn.setOnClickListener {
             App.post(EventMessage(EventCode.REFRESH))
         }
     }
