@@ -14,7 +14,7 @@
         android:gravity="center"
         android:orientation="vertical">
 
-        <com.byl.mvvm.widget.ClearEditText
+        <com.dzf.mvvm.widget.ClearEditText
             android:id="@+id/et_login_username"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

@@ -1,0 +1,36 @@
+package com.dzf.mvvm.ui.main.vm
+
+import android.annotation.SuppressLint
+import androidx.fragment.app.Fragment
+import androidx.lifecycle.LifecycleOwner
+import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.Observer
+import com.dzf.mvvm.databinding.FragmentMainBinding
+import com.dzf.mvvm.base.BaseViewModel
+import com.dzf.mvvm.ui.main.MainFragment
+import com.dzf.mvvm.ui.main.model.ArticleListBean
+
+class MainFragmentViewModel : BaseViewModel<FragmentMainBinding>() {
+
+    var articlesData = MutableLiveData<ArticleListBean>()
+
+    fun getArticleList(page: Int, isShowLoading: Boolean = false) {
+        launch({ httpUtil.getArticleList(page) }, articlesData, isShowLoading)
+    }
+
+    @SuppressLint("NotifyDataSetChanged")
+    override fun observe(fragment: Fragment, owner: LifecycleOwner) {
+        val mContext = fragment as MainFragment
+        articlesData.observe(owner, Observer {
+            vb.refreshLayout.finishRefresh()
+            vb.refreshLayout.finishLoadMore()
+            if (mContext.page == 0) mContext.list!!.clear()
+            it.datas?.let { it1 -> mContext.list!!.addAll(it1) }
+            mContext.adapter!!.notifyDataSetChanged()
+        })
+        errorData.observe(owner, Observer {
+            vb.refreshLayout.finishRefresh()
+            vb.refreshLayout.finishLoadMore()
+        })
+    }
+}

@@ -4,7 +4,7 @@
     android:layout_height="match_parent">
 
 
-    <com.byl.mvvm.utils.DefaultTopTitleBarWhite
+    <com.dzf.mvvm.utils.DefaultTopTitleBarWhite
         android:id="@+id/layout_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
