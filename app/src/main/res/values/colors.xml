@@ -37,6 +37,7 @@
     <color name="colorBackground">#EEEEEE</color>
     <color name="colorMedicinalItem">#E15544</color>
     <color name="colorStatusBar">#66999999</color>
+    <color name="toolbar">#F7E5CC</color>
 
     <color name="FFC115">#FFC115</color>
     <color name="C0C0C0">#C0C0C0</color>

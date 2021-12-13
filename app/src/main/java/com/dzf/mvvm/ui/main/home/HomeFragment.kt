@@ -18,7 +18,7 @@ import com.dzf.mvvm.ui.main.model.ArticleBean
  * @ProjectName : MVVM
  * @Author : Dai Zhi Feng
  * @Time : 2021/9/1 15:57
- * @Description : 文件描述
+ * @Description : 首页
  */
 class HomeFragment : BaseFragment<HomeModel, FragmentHomeBinding>() {
     var adapter: ArticleListAdapter? = null
@@ -35,6 +35,7 @@ class HomeFragment : BaseFragment<HomeModel, FragmentHomeBinding>() {
             .setTitleBackColor(ColorUtils.getColor(R.color.white))
             .setBottomLineVisible(true)
             .setRightTextVisible(false)
+            .setTitleBackColor(ColorUtils.getColor(R.color.toolbar))
             .setRightClickListener {
                 CommonDialog.Builder(mActivity)
                     .setMessage("是否提交数据?")

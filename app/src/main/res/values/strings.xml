@@ -26,4 +26,6 @@
     <string name="app_camera">相机</string>
     <string name="app_city">选择城市</string>
     <string name="app_doctorProtocol"><u>《金草中医医生协议》</u></string>
+    <string name="title_online_prescribing">线上开方</string>
+    <string name="title_camera_prescribing">拍照开方</string>
 </resources>
