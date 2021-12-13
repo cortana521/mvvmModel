@@ -1,6 +1,7 @@
 package com.dzf.mvvm.ui.main.home
 
 import android.content.DialogInterface
+import androidx.recyclerview.widget.GridLayoutManager
 import com.blankj.utilcode.util.ColorUtils
 import com.blankj.utilcode.util.ResourceUtils
 import com.blankj.utilcode.util.StringUtils
@@ -12,7 +13,10 @@ import com.dzf.mvvm.event.EventCode
 import com.dzf.mvvm.event.EventMessage
 import com.dzf.mvvm.base.BaseFragment
 import com.dzf.mvvm.ui.main.adapter.ArticleListAdapter
+import com.dzf.mvvm.ui.main.adapter.HomeFuncAdapter
 import com.dzf.mvvm.ui.main.model.ArticleBean
+import com.dzf.mvvm.ui.main.model.HomeFuncItemBean
+import com.dzf.mvvm.utils.StatusBarUtil
 
 /**
  * @ProjectName : MVVM
@@ -21,11 +25,12 @@ import com.dzf.mvvm.ui.main.model.ArticleBean
  * @Description : 首页
  */
 class HomeFragment : BaseFragment<HomeModel, FragmentHomeBinding>() {
-    var adapter: ArticleListAdapter? = null
-    var list: ArrayList<ArticleBean>? = ArrayList()
+    var adapter: HomeFuncAdapter? = null
+    var list: ArrayList<HomeFuncItemBean>? = ArrayList()
     var page: Int = 0
 
     override fun initView() {
+        StatusBarUtil.setColorNoTranslucent(mActivity, ColorUtils.getColor(R.color.toolbar))
         vb.layoutTitle
             .setRightTextVisible(false)
             .setCenterTitleText(StringUtils.getString(R.string.app_home_title))
@@ -58,7 +63,11 @@ class HomeFragment : BaseFragment<HomeModel, FragmentHomeBinding>() {
     }
 
     override fun initData() {
-
+        list?.addAll(vm.setHomeFuncData()!!)
+        vb.rcyHome.layoutManager = GridLayoutManager(mActivity, 4)
+        adapter = list?.let { HomeFuncAdapter(mActivity, it) }
+        vb.rcyHome.adapter = adapter
+        vb.refreshLayout.setEnableLoadMore(false)
     }
 
     override fun lazyLoadData() {

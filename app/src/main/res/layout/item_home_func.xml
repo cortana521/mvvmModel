@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rl_item"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="16dp"
+    >
+    <ImageView
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="20dp"
+
+        android:id="@+id/iv_red_first"
+        android:src="@drawable/red_point"
+        android:layout_width="8dp"
+        android:visibility="gone"
+        android:layout_height="8dp" />
+    <ImageView
+        android:id="@+id/iv_home_func_img"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:src="@mipmap/ic_launcher"
+        android:layout_centerHorizontal="true"/>
+
+    <TextView
+        android:id="@+id/tv_home_func_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="功能菜单"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/black3"
+        android:layout_below="@id/iv_home_func_img"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/tv_home_func_unread_num"
+        android:layout_width="wrap_content"
+        android:layout_height="16dp"
+        android:layout_alignParentRight="true"
+        android:gravity="center"
+        android:minWidth="16dp"
+        android:textColor="@color/white"
+        android:textSize="11sp"
+        android:text="2"
+        android:visibility="invisible"/>
+</RelativeLayout>
