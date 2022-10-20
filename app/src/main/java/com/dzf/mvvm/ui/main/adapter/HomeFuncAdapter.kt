@@ -5,6 +5,7 @@ import com.blankj.utilcode.util.ToastUtils
 import com.dzf.mvvm.base.BaseAdapter
 import com.dzf.mvvm.databinding.ItemHomeFuncBinding
 import com.dzf.mvvm.ui.main.model.HomeFuncItemBean
+import com.dzf.mvvm.widget.clicks
 
 /**
  * @ProjectName : MVVM
