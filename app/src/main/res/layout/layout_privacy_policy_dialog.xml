@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/dp_10"
+    android:background="@drawable/popup_white_shape_10"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:padding="@dimen/dp_10"
+        android:text="隐私政策"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_dimen_17"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tv_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_title"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="30dp"
+        android:text=""
+        android:textColor="@color/black3"
+        android:textSize="15sp" />
+
+    <RelativeLayout
+        android:id="@+id/rl_layout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_30"
+        android:layout_below="@id/tv_content"
+        android:layout_marginTop="@dimen/dp_10">
+
+        <ImageView
+            android:id="@+id/iv_img"
+            android:layout_width="@dimen/dp_23"
+            android:layout_height="@dimen/dp_23"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="15sp"
+            android:layout_marginRight="2dp"
+            android:paddingLeft="@dimen/dp_05"
+            android:paddingRight="@dimen/dp_05"
+            android:src="@drawable/null_round" />
+
+        <TextView
+            android:id="@+id/tv_hint"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@id/iv_img"
+            android:text=""
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_dimen_13" />
+
+        <TextView
+            android:id="@+id/tv_protocol"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/dp_30"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center_vertical"
+            android:layout_toRightOf="@id/tv_hint"
+            android:gravity="center_vertical"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_dimen_13" />
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/tv_btn"
+        android:layout_width="150dp"
+        android:layout_height="30dp"
+        android:layout_below="@id/rl_layout"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/layer_list_blue_20"
+        android:gravity="center"
+        android:text="同意"
+        android:textColor="@color/white"
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/tv_cancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_btn"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:paddingTop="7dp"
+        android:paddingBottom="7dp"
+        android:text="不同意并退出APP"
+        android:textColor="@color/black3"
+        android:textSize="15sp" />
+
+</RelativeLayout>

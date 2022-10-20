@@ -12,16 +12,22 @@ class Config {
         val isDeBug = false
         val USER_PHONE = "phone"
         const val USER_SIG = "user_sig"
+
         //用户id
         const val UID = "uid"
+
         //用户角色
         const val USER_ROLE = "user_role"
+
         //用户地址码
         const val USER_AREANO = "user_areaNo"
+
         //token
         const val TOKEN = "token"
+
         //用户phone
         const val UPHONE = "phone"
+
         //医生验证信息
         const val QUALIFICATION_INF = "qualification_inf"
 
@@ -36,5 +42,13 @@ class Config {
         /* 密码正则匹配 */ //    public static final String PWD_REG = "^(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z]{6,25}$";
         const val PWD_REG =
             "^(?![0-9]+$)(?![a-zA-Z]+$)(?![0-9A-Z]+$)(?![0-9a-z]+$)[a-zA-Z0-9]{8,18}"
+
+        const val AGREE_CONTENT = "我已阅读并同意《用户协议》和《隐私政策》"
+        const val mPrivacyPolicy =
+            "    金草中医尊重并保护所有用户的个人隐私，为了能给您提供更具体的服务，金草中医会按照隐私政策的规定使用您披露的个人信息与剪切板。"
+        const val APP_PRIVACY = "https://szwx.jctcm.com/html/app/app_privacy.html?v=" //网络图片url
+
+        const val service_agreement = "https://szwx.jctcm.com/html/app/service_agreement.html?v=" //网络图片url
+
     }
 }

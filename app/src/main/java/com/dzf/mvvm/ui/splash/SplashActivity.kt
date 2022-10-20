@@ -4,17 +4,24 @@ import android.Manifest
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.os.Build
-import android.os.Handler
 import android.widget.Toast
 import androidx.core.content.ContextCompat
+import com.blankj.utilcode.util.SPUtils
+import com.blankj.utilcode.util.StringUtils
+import com.dzf.mvvm.Config
+import com.dzf.mvvm.R
 import com.dzf.mvvm.databinding.ActivitySplashBinding
 import com.dzf.mvvm.base.BaseActivity
 import com.dzf.mvvm.base.BaseViewModel
+import com.dzf.mvvm.dialog.PrivacyDialog
 import com.dzf.mvvm.ui.login.LoginActivity
 import com.dzf.mvvm.utils.SysUtils
+import java.util.*
 
 
 class SplashActivity : BaseActivity<BaseViewModel<ActivitySplashBinding>, ActivitySplashBinding>() {
+
+    private var privacyDialog: PrivacyDialog? = null
 
     override fun initView() {
         if (!this.isTaskRoot) {
@@ -34,21 +41,19 @@ class SplashActivity : BaseActivity<BaseViewModel<ActivitySplashBinding>, Activi
 //                ), 1001
 //            )
 //        } else {
-        init()
+
 //        }
     }
 
     private fun init() {
         SysUtils.initFiles()
-        Handler().postDelayed({
 //            getjumpActivity(ActivityARouter.LOGIN)
 //            if (StringUtils.isEmpty(SPUtils.getInstance().getString(Config.TOKEN))) {
-                startActivity(Intent(this, LoginActivity::class.java))
+        startActivity(Intent(this, LoginActivity::class.java))
 //            }else{
 //                startActivity(Intent(this, MainActivity::class.java))
 //            }
-            finish()
-        }, 2000)
+        finish()
     }
 
     override fun initClick() {
@@ -56,7 +61,21 @@ class SplashActivity : BaseActivity<BaseViewModel<ActivitySplashBinding>, Activi
     }
 
     override fun initData() {
+        if (privacyDialog == null) {
+            privacyDialog = PrivacyDialog(this, R.style.bottom_dialog)
+        }
+        privacyDialog!!.show()
+        if (StringUtils.isEmpty(SPUtils.getInstance().getString(Config.TOKEN))) {
+            privacyDialog?.setOnClickEvent(object : PrivacyDialog.OnClickEvent {
+                override fun onAgreeturesClick() {
+                    init()
+                }
 
+                override fun onNoAgreeAlbumClick() {
+                    finish()
+                }
+            })
+        }
     }
 
     override fun onRequestPermissionsResult(

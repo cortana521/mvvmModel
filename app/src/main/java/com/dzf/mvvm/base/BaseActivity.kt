@@ -36,7 +36,7 @@ abstract class BaseActivity<VM : BaseViewModel<VB>, VB : ViewBinding> : AppCompa
     lateinit var mContext: FragmentActivity
     lateinit var vm: VM
     lateinit var vb: VB
-    var drawDialog: DrawDialog? = null
+    private var drawDialog: DrawDialog? = null
     private var loadingDialog: LodingDialog? = null
 
     @Suppress("UNCHECKED_CAST")

@@ -4,9 +4,9 @@ import android.app.Dialog
 import android.content.Context
 import android.os.Bundle
 import android.view.*
-import android.widget.TextView
 import com.dzf.mvvm.R
 import com.dzf.mvvm.utils.DensityUtil
+import kotlinx.android.synthetic.main.dialog_content_circle.*
 
 
 /**
@@ -17,11 +17,8 @@ import com.dzf.mvvm.utils.DensityUtil
  */
 class DrawDialog(context: Context, themeResId: Int) : Dialog(context, themeResId) {
 
-    var mContext: Context = context
-    var onClickEvent: OnClickEvent? = null
-    var drawDot: TextView? = null
-    var drawLine: TextView? = null
-    var drawTemplate: TextView? = null
+    private var mContext: Context = context
+    private var onClickEvent: OnClickEvent? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,35 +26,28 @@ class DrawDialog(context: Context, themeResId: Int) : Dialog(context, themeResId
         window?.setGravity(Gravity.BOTTOM)
         window?.setWindowAnimations(R.style.BottomSelectAnimation)
         var view: View = LayoutInflater.from(mContext).inflate(R.layout.dialog_content_circle, null)
-        initView(view)
         initLisenter()
         setContentView(view)
     }
 
     private fun initLisenter() {
-        drawTemplate?.setOnClickListener {
+        text_draw_arrow?.setOnClickListener {
             dismiss()
         }
-        drawDot?.setOnClickListener {
+        text_draw_dot?.setOnClickListener {
             onClickEvent?.onTakingPicturesClick()
             dismiss()
         }
 
-        drawLine?.setOnClickListener {
+        text_draw_line?.setOnClickListener {
             onClickEvent?.onPhotoAlbumClick()
             dismiss()
         }
     }
 
-    private fun initView(view: View) {
-        drawDot = view.findViewById(R.id.text_draw_dot)
-        drawLine = view.findViewById(R.id.text_draw_line)
-        drawTemplate = view.findViewById(R.id.text_draw_arrow)
-    }
-
     fun setTextContent(drawDot:String,drawLine:String){
-        this.drawDot?.text = drawDot
-        this.drawLine?.text = drawLine
+        this.text_draw_dot?.text = drawDot
+        this.text_draw_line?.text = drawLine
     }
 
     override fun show() {

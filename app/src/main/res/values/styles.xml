@@ -1,12 +1,12 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
-        <item name="android:windowContentTransitions">true</item>
-        <item name="android:windowAllowEnterTransitionOverlap">true</item>
-        <item name="android:windowAllowReturnTransitionOverlap">true</item>
-        <item name="android:windowSharedElementEnterTransition">@android:transition/move</item>
-        <item name="android:windowSharedElementExitTransition">@android:transition/move</item>
+        <item name="android:windowContentTransitions" tools:ignore="NewApi">true</item>
+        <item name="android:windowAllowEnterTransitionOverlap" tools:ignore="NewApi">true</item>
+        <item name="android:windowAllowReturnTransitionOverlap" tools:ignore="NewApi">true</item>
+        <item name="android:windowSharedElementEnterTransition" tools:ignore="NewApi">@android:transition/move</item>
+        <item name="android:windowSharedElementExitTransition" tools:ignore="NewApi">@android:transition/move</item>
 <!--        <item name="android:windowBackground">@mipmap/app_welcome_bg</item>-->
         <item name="android:splitMotionEvents">false</item>
     </style>
@@ -118,6 +118,27 @@
     <style name="ActionSheetDialogAnimation" parent="@android:style/Animation.Dialog">
         <item name="android:windowEnterAnimation">@anim/actionsheet_dialog_in</item>
         <item name="android:windowExitAnimation">@anim/actionsheet_dialog_out</item>
+    </style>
+
+    <!--仿京东地址选择样式-->
+    <style name="bottom_dialog" parent="android:style/Theme.Dialog">
+        <!-- 设置无边框 -->
+        <item name="android:windowFrame">@null</item>
+        <!-- 设置无标题 -->
+        <item name="android:windowNoTitle">true</item>
+        <!-- 设置未浮动窗口 -->
+        <item name="android:windowIsFloating">true</item>
+        <!-- 半透明 -->
+        <item name="android:windowIsTranslucent">true</item>
+        <!-- 设置完全透明 -->
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <!-- Dialog进入及退出动画 -->
+        <item name="android:windowAnimationStyle">@style/Animation_Bottom_Dialog</item>
+    </style>
+
+    <style name="Animation_Bottom_Dialog">
+        <item name="android:windowEnterAnimation">@anim/bottom_dialog_enter</item>
+        <item name="android:windowExitAnimation">@anim/bottom_dialog_exit</item>
     </style>
 
 </resources>

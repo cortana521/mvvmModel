@@ -24,11 +24,11 @@ import kotlinx.android.synthetic.main.activity_test_event.*
  */
 @Route(path = ActivityARouter.MAIN)
 class MainActivity : BaseActivity<MainActivityViewModel, ActivityMainBinding>() {
-    var homeFragment = HomeFragment()
-    var userFragment = UserFragment()
-    var messageFragment = MessageFragment()
-    var mineFragment = MineFragment()
-    var fragments: List<Fragment> = listOf(
+    private var homeFragment = HomeFragment()
+    private var userFragment = UserFragment()
+    private var messageFragment = MessageFragment()
+    private var mineFragment = MineFragment()
+    private var fragments: List<Fragment> = listOf(
         homeFragment,
         userFragment, messageFragment, mineFragment
     )
@@ -41,7 +41,7 @@ class MainActivity : BaseActivity<MainActivityViewModel, ActivityMainBinding>() 
         bottomNavigationView.setOnNavigationItemSelectedListener(mBottomNavigationView)
     }
 
-    val mBottomNavigationView = BottomNavigationView.OnNavigationItemSelectedListener { item ->
+    private val mBottomNavigationView = BottomNavigationView.OnNavigationItemSelectedListener { item ->
         // 避免再次点击重复创建
         if (item.isChecked) {
             return@OnNavigationItemSelectedListener true

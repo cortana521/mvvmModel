@@ -12,9 +12,7 @@ import com.dzf.mvvm.dialog.CommonDialog
 import com.dzf.mvvm.event.EventCode
 import com.dzf.mvvm.event.EventMessage
 import com.dzf.mvvm.base.BaseFragment
-import com.dzf.mvvm.ui.main.adapter.ArticleListAdapter
 import com.dzf.mvvm.ui.main.adapter.HomeFuncAdapter
-import com.dzf.mvvm.ui.main.model.ArticleBean
 import com.dzf.mvvm.ui.main.model.HomeFuncItemBean
 import com.dzf.mvvm.utils.StatusBarUtil
 

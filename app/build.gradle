@@ -11,8 +11,8 @@ android {
         applicationId "com.dzf.mvvm"
         minSdkVersion 19
         targetSdkVersion 29
-        versionCode 1
-        versionName "1.0"
+        versionCode 136
+        versionName "7.8.2"
         flavorDimensions versionName
         //如果存在kotlin和java代码必须配置下面的代码
         kapt {
@@ -27,6 +27,23 @@ android {
 
     dataBinding {
         enabled = true
+    }
+
+    // 签名配置
+    signingConfigs {
+        release {
+            try {
+                storeFile file("./keystore/jincaodoctor.jks")
+                storePassword "jincao2017"
+                keyAlias "doctor"
+                keyPassword "jincao2017"
+            } catch (ex) {
+                throw new InvalidUserDataException(ex.toString())
+            }
+        }
+        debug {
+            storeFile file("./keystore/debug.keystore")
+        }
     }
 
     buildTypes {
@@ -76,7 +93,6 @@ dependencies {
     implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.2.0'
     implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0'
     implementation 'com.google.android.material:material:1.1.0'
-
 
     //glide图片加载框架
     final GLIDE_VERSION = '4.11.0'
