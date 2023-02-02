@@ -1,6 +1,7 @@
 package com.dzf.mvvm.api.retrofit
 
 import com.dzf.mvvm.App
+import com.dzf.mvvm.Config
 import com.dzf.mvvm.api.ApiService
 import com.dzf.mvvm.api.URLConstant
 import com.dzf.mvvm.api.interceptor.LoggingInterceptor
@@ -13,6 +14,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
 
 
+@Suppress("DEPRECATION")
 class RetrofitClient {
 
     companion object {
@@ -40,7 +42,6 @@ class RetrofitClient {
     }
 
 
-
     private fun getOkHttpClient(): OkHttpClient {
         return OkHttpClient.Builder()
             .connectTimeout(20, TimeUnit.SECONDS)
@@ -63,7 +64,7 @@ class RetrofitClient {
             val builder = originalRequest.newBuilder()
             //获取头信息的集合如：manage,mdffx
             val headerValues: List<String> = originalRequest.headers("BaseUrlName")
-            return if (headerValues != null && headerValues.size > 0) {
+            return if (headerValues.isNotEmpty()) {
                 //删除原有配置中的值,就是namesAndValues集合里的值
                 builder.removeHeader("article")
                 //获取头信息中配置的value,如：manage或者mdffx
@@ -81,6 +82,7 @@ class RetrofitClient {
                     .host(baseURL!!.host()) //主机地址
                     .port(baseURL!!.port()) //端口
                     .build()
+
                 //获取处理后的新newRequest
                 val newRequest = builder.url(newHttpUrl).build()
                 chain.proceed(newRequest)

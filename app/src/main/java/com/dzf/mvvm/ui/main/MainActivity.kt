@@ -65,7 +65,7 @@ class MainActivity : BaseActivity<MainActivityViewModel, ActivityMainBinding>() 
     }
 
     override fun initData() {
-        bottomNavigationView.selectedItemId = bottomNavigationView.getMenu().getItem(0).getItemId()
+        bottomNavigationView.selectedItemId = bottomNavigationView.getMenu().getItem(0).itemId
         showFragment(0,fragments)
     }
 

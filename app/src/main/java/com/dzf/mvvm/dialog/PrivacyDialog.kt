@@ -37,8 +37,14 @@ class PrivacyDialog(context: Context?, themeResId: Int) : Dialog(context!!, them
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setCanceledOnTouchOutside(false)
-        var view =
+        val view =
             LayoutInflater.from(mContext).inflate(R.layout.layout_privacy_policy_dialog, null)
+        val layoutParams = window!!.attributes
+        layoutParams.gravity = Gravity.CENTER
+        layoutParams.width = 1000
+        layoutParams.height = WindowManager.LayoutParams.WRAP_CONTENT
+        window?.setWindowAnimations(R.style.BottomSelectAnimation)
+        window!!.attributes = layoutParams
         initData(view)
         initLisenter(view)
         setContentView(view)
@@ -84,22 +90,6 @@ class PrivacyDialog(context: Context?, themeResId: Int) : Dialog(context!!, them
             onClickEvent?.onNoAgreeAlbumClick()
         }
 
-    }
-
-    override fun show() {
-        super.show()
-        val layoutParams = window!!.attributes
-        layoutParams.gravity = Gravity.CENTER
-        layoutParams.width = 1000
-        layoutParams.height = WindowManager.LayoutParams.WRAP_CONTENT
-        window?.setWindowAnimations(R.style.BottomSelectAnimation)
-//        window!!.decorView.setPadding(
-//            DensityUtil.dp2px(mContext, 9.5f),
-//            0,
-//            DensityUtil.dp2px(mContext, 9.5f),
-//            DensityUtil.dp2px(mContext, 9.5f)
-//        )
-        window!!.attributes = layoutParams
     }
 
     fun setOnClickEvent(listener: OnClickEvent) {

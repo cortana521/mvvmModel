@@ -1,7 +1,10 @@
 package com.dzf.mvvm.api
 
+import com.blankj.utilcode.util.SPUtils
+import com.dzf.mvvm.Config
 import com.dzf.mvvm.api.response.BaseResult
 import com.dzf.mvvm.ui.common.model.TestModel
+import com.dzf.mvvm.ui.login.model.DoctorInfRequest
 import com.dzf.mvvm.ui.login.model.LoginResponse
 import com.dzf.mvvm.ui.login.model.RegisterResponse
 import com.dzf.mvvm.ui.main.model.ArticleListBean
@@ -17,17 +20,32 @@ interface ApiService {
     @GET("article/listproject/{page}/json")
     suspend fun getArticleList(@Path("page") page: Int): BaseResult<ArticleListBean>
 
+    /**
+     * 登录
+     */
     @POST("api/doctor/login")
     @FormUrlEncoded
-    suspend fun getPasswordLogin(@Field("mobile") mobile:String,@Field("loginPwd") loginPwd:String,
-    @Field ("code") code:String)
-    : BaseResult<LoginResponse>
+    suspend fun getPasswordLogin(
+        @Field("mobile") mobile: String, @Field("loginPwd") loginPwd: String,
+        @Field("code") code: String
+    )
+            : BaseResult<LoginResponse>
+
+    /**
+     * 获取医生信息
+     */
+    @POST("api/doctor/info")
+    @FormUrlEncoded
+    suspend fun getDoctorInfo(
+        @Field("resource") type: String,
+        @Field("appversion") version: String
+    ): BaseResult<DoctorInfRequest>
 
     @POST("api/msg/msgSend/docRetrievePwd")
     @FormUrlEncoded
-    suspend fun getPhoneCode(@Field ("mobile") phone:String) : BaseResult<String>
+    suspend fun getPhoneCode(@Field("mobile") phone: String): BaseResult<String>
 
     @POST("api/doctor/add")
     @FormUrlEncoded
-    suspend fun getRegisterAccount(@FieldMap map:Map<String,String>) : BaseResult<RegisterResponse>
+    suspend fun getRegisterAccount(@FieldMap map: Map<String, String>): BaseResult<RegisterResponse>
 }

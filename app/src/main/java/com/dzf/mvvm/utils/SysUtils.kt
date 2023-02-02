@@ -1,3 +1,5 @@
+@file:Suppress("DEPRECATION")
+
 package com.dzf.mvvm.utils
 
 import android.app.Activity
@@ -5,6 +7,7 @@ import android.content.Context
 import android.content.pm.ApplicationInfo
 import android.content.pm.PackageInfo
 import android.content.pm.PackageManager
+import android.content.pm.PackageManager.NameNotFoundException
 import android.os.Build
 import android.os.Environment
 import android.text.TextUtils
@@ -92,6 +95,14 @@ object SysUtils {
         }
     }
 
+    /**
+     * 获取当前手机系统版本号
+     * @return 系统版本号
+     */
+    fun getSystemVersion(): String? {
+        return Build.VERSION.RELEASE
+    }
+
     fun initFiles() {
         var file = File(Environment.getExternalStorageDirectory(), "MVVM/data")
         if (!file.exists()) file.mkdirs()
@@ -155,4 +166,20 @@ object SysUtils {
         val matcher = pattern.matcher(str)
         return matcher.matches()
     }
+
+    /**
+     * 获得软件的版本code（int类型）如：1
+     */
+    fun getVersionNum(mContext: Context): Int {
+        var versionNum = 0
+        try {
+            val packageInfo = mContext.packageManager.getPackageInfo(mContext.packageName, 0)
+            versionNum = packageInfo.versionCode
+        } catch (e: NameNotFoundException) {
+            println("工程包名不正确！")
+            e.printStackTrace()
+        }
+        return versionNum
+    }
+
 }

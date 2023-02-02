@@ -24,6 +24,7 @@ class Config {
 
         //token
         const val TOKEN = "token"
+        var token = ""
 
         //用户phone
         const val UPHONE = "phone"
@@ -48,7 +49,9 @@ class Config {
             "    金草中医尊重并保护所有用户的个人隐私，为了能给您提供更具体的服务，金草中医会按照隐私政策的规定使用您披露的个人信息与剪切板。"
         const val APP_PRIVACY = "https://szwx.jctcm.com/html/app/app_privacy.html?v=" //网络图片url
 
-        const val service_agreement = "https://szwx.jctcm.com/html/app/service_agreement.html?v=" //网络图片url
+        const val service_agreement =
+            "https://szwx.jctcm.com/html/app/service_agreement.html?v=" //网络图片url
 
     }
+
 }

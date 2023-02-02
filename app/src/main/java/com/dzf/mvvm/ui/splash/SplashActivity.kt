@@ -15,6 +15,7 @@ import com.dzf.mvvm.base.BaseActivity
 import com.dzf.mvvm.base.BaseViewModel
 import com.dzf.mvvm.dialog.PrivacyDialog
 import com.dzf.mvvm.ui.login.LoginActivity
+import com.dzf.mvvm.ui.main.MainActivity
 import com.dzf.mvvm.utils.SysUtils
 import java.util.*
 
@@ -48,11 +49,12 @@ class SplashActivity : BaseActivity<BaseViewModel<ActivitySplashBinding>, Activi
     private fun init() {
         SysUtils.initFiles()
 //            getjumpActivity(ActivityARouter.LOGIN)
-//            if (StringUtils.isEmpty(SPUtils.getInstance().getString(Config.TOKEN))) {
-        startActivity(Intent(this, LoginActivity::class.java))
-//            }else{
-//                startActivity(Intent(this, MainActivity::class.java))
-//            }
+        if (StringUtils.isEmpty(SPUtils.getInstance().getString(Config.TOKEN))) {
+            startActivity(Intent(this, LoginActivity::class.java))
+        } else {
+            Config.token = SPUtils.getInstance().getString(Config.TOKEN)!!
+            startActivity(Intent(this, MainActivity::class.java))
+        }
         finish()
     }
 
@@ -64,8 +66,8 @@ class SplashActivity : BaseActivity<BaseViewModel<ActivitySplashBinding>, Activi
         if (privacyDialog == null) {
             privacyDialog = PrivacyDialog(this, R.style.bottom_dialog)
         }
-        privacyDialog!!.show()
         if (StringUtils.isEmpty(SPUtils.getInstance().getString(Config.TOKEN))) {
+            privacyDialog!!.show()
             privacyDialog?.setOnClickEvent(object : PrivacyDialog.OnClickEvent {
                 override fun onAgreeturesClick() {
                     init()
@@ -75,6 +77,8 @@ class SplashActivity : BaseActivity<BaseViewModel<ActivitySplashBinding>, Activi
                     finish()
                 }
             })
+        } else {
+            init()
         }
     }
 

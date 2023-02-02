@@ -15,6 +15,9 @@ import com.dzf.mvvm.base.BaseFragment
 import com.dzf.mvvm.ui.main.adapter.HomeFuncAdapter
 import com.dzf.mvvm.ui.main.model.HomeFuncItemBean
 import com.dzf.mvvm.utils.StatusBarUtil
+import com.scwang.smartrefresh.layout.api.RefreshLayout
+import com.scwang.smartrefresh.layout.listener.OnRefreshLoadMoreListener
+import kotlinx.android.synthetic.main.fragment_home.*
 
 /**
  * @ProjectName : MVVM
@@ -42,13 +45,17 @@ class HomeFragment : BaseFragment<HomeModel, FragmentHomeBinding>() {
             .setRightClickListener {
                 CommonDialog.Builder(mActivity)
                     .setMessage("是否提交数据?")
-                    .setNegativeButton(StringUtils.getString(R.string.app_determine_btn), DialogInterface.OnClickListener { p0, p1 ->
-                        p0.dismiss()
-                    })
+                    .setNegativeButton(
+                        StringUtils.getString(R.string.app_determine_btn),
+                        DialogInterface.OnClickListener { p0, p1 ->
+                            p0.dismiss()
+                        })
                     .setMessageColor(R.color.black)
-                    .setPositiveButton(StringUtils.getString(R.string.app_cancel_btn), DialogInterface.OnClickListener { dialog, which ->
-                        dialog.dismiss()
-                    })
+                    .setPositiveButton(
+                        StringUtils.getString(R.string.app_cancel_btn),
+                        DialogInterface.OnClickListener { dialog, which ->
+                            dialog.dismiss()
+                        })
                     .setWith(0.8f)
                     .create()
                     .show()
@@ -57,10 +64,20 @@ class HomeFragment : BaseFragment<HomeModel, FragmentHomeBinding>() {
     }
 
     override fun initClick() {
+        vb.refreshLayout.setOnRefreshLoadMoreListener(object : OnRefreshLoadMoreListener {
+            override fun onRefresh(refreshLayout: RefreshLayout) {
+                vm.getDoctorMsg(mActivity)
+            }
 
+            override fun onLoadMore(refreshLayout: RefreshLayout) {
+
+            }
+
+        })
     }
 
     override fun initData() {
+        vm.getDoctorMsg(mActivity)
         list?.addAll(vm.setHomeFuncData()!!)
         vb.rcyHome.layoutManager = GridLayoutManager(mActivity, 4)
         adapter = list?.let { HomeFuncAdapter(mActivity, it) }
@@ -69,7 +86,7 @@ class HomeFragment : BaseFragment<HomeModel, FragmentHomeBinding>() {
     }
 
     override fun lazyLoadData() {
-
+        vm.getDoctorMsg(mActivity)
     }
 
     /**
@@ -78,7 +95,7 @@ class HomeFragment : BaseFragment<HomeModel, FragmentHomeBinding>() {
     override fun handleEvent(msg: EventMessage) {
         super.handleEvent(msg)
         if (msg.code == EventCode.REFRESH) {
-            ToastUtils.showShort( "主页：刷新")
+            ToastUtils.showShort("主页：刷新")
             page = 0
             vm.getArticleList(page)
         }
