@@ -1,10 +1,12 @@
 package com.dzf.mvvm.api.retrofit
 
+import android.media.session.MediaSession
 import com.dzf.mvvm.App
 import com.dzf.mvvm.Config
 import com.dzf.mvvm.api.ApiService
 import com.dzf.mvvm.api.URLConstant
 import com.dzf.mvvm.api.interceptor.LoggingInterceptor
+import com.dzf.mvvm.api.interceptor.TokenHeaderInterceptor
 import com.franmontiel.persistentcookiejar.PersistentCookieJar
 import com.franmontiel.persistentcookiejar.cache.SetCookieCache
 import com.franmontiel.persistentcookiejar.persistence.SharedPrefsCookiePersistor
@@ -49,6 +51,7 @@ class RetrofitClient {
             .cookieJar(cookieJar)
             //处理多BaseUrl,添加应用拦截器
             .addInterceptor(MoreBaseUrlInterceptor())
+            .addInterceptor(TokenHeaderInterceptor())
             .addInterceptor(LoggingInterceptor())
             .sslSocketFactory(SSLContextSecurity.createIgnoreVerifySSL("TLS"))
             .build()

@@ -23,7 +23,11 @@ class PassWordViewModel : BaseViewModel<FragmentLoginPasswordBinding>() {
     var articlesData = MutableLiveData<LoginResponse>()
 
     fun getLoginMessage(phone: String, password: String, isShowLoading: Boolean = true) {
-        launch({ httpUtil.getPasswordLogin(phone, password, "") }, articlesData, isShowLoading)
+        launch(
+            { httpUtil.getPasswordLogin(phone, password, android.os.Build.MODEL) },
+            articlesData,
+            isShowLoading
+        )
     }
 
     override fun observe(fragment: Fragment, owner: LifecycleOwner) {

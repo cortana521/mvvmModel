@@ -6,7 +6,6 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Observer
-import com.dzf.mvvm.Config
 import com.dzf.mvvm.R
 import com.dzf.mvvm.base.BaseViewModel
 import com.dzf.mvvm.databinding.FragmentHomeBinding

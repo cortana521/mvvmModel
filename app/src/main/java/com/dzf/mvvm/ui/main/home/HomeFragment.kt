@@ -67,6 +67,7 @@ class HomeFragment : BaseFragment<HomeModel, FragmentHomeBinding>() {
         vb.refreshLayout.setOnRefreshLoadMoreListener(object : OnRefreshLoadMoreListener {
             override fun onRefresh(refreshLayout: RefreshLayout) {
                 vm.getDoctorMsg(mActivity)
+                refreshLayout.finishRefresh()
             }
 
             override fun onLoadMore(refreshLayout: RefreshLayout) {

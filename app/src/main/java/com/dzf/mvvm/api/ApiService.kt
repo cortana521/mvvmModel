@@ -25,7 +25,7 @@ interface ApiService {
     @FormUrlEncoded
     suspend fun getPasswordLogin(
         @Field("mobile") mobile: String, @Field("loginPwd") loginPwd: String,
-        @Field("code") code: String
+        @Field("device") code: String
     )
             : BaseResult<LoginResponse>
 

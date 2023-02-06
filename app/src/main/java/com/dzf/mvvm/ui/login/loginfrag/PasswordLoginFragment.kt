@@ -52,7 +52,13 @@ class PasswordLoginFragment : BaseFragment<PassWordViewModel, FragmentLoginPassw
         })
 
         vb.icLayout.ivImg.setOnClickListener {
-            ToastUtils.showLong("点击")
+            if (Config.AGREE_OR_NOT) {
+                Config.AGREE_OR_NOT = false
+                vb.icLayout.ivImg.setImageResource(R.drawable.null_round)
+            } else {
+                Config.AGREE_OR_NOT = true
+                vb.icLayout.ivImg.setImageResource(R.drawable.yes_selector_sugar)
+            }
         }
     }
 
