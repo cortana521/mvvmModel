@@ -1,7 +1,5 @@
 package com.dzf.mvvm.api
 
-import com.blankj.utilcode.util.SPUtils
-import com.dzf.mvvm.Config
 import com.dzf.mvvm.api.response.BaseResult
 import com.dzf.mvvm.ui.common.model.TestModel
 import com.dzf.mvvm.ui.login.model.DoctorInfRequest

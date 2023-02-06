@@ -23,8 +23,8 @@ import com.dzf.mvvm.utils.SysUtils
  */
 class HomeModel : BaseViewModel<FragmentHomeBinding>() {
 
-    var articlesData = MutableLiveData<ArticleListBean>()
-    var doctorMsg = MutableLiveData<DoctorInfRequest>()
+    private var articlesData = MutableLiveData<ArticleListBean>()
+    private var doctorMsg = MutableLiveData<DoctorInfRequest>()
 
     fun getArticleList(page: Int, isShowLoading: Boolean = false) {
         launch({ httpUtil.getArticleList(page) }, articlesData, isShowLoading)

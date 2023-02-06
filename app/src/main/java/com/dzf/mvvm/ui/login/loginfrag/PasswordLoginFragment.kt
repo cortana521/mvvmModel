@@ -7,6 +7,7 @@ import android.view.View
 import android.view.inputmethod.InputMethodManager
 import com.blankj.utilcode.util.SPUtils
 import com.blankj.utilcode.util.StringUtils
+import com.blankj.utilcode.util.ToastUtils
 import com.dzf.mvvm.Config
 import com.dzf.mvvm.R
 import com.dzf.mvvm.base.BaseFragment
@@ -48,8 +49,11 @@ class PasswordLoginFragment : BaseFragment<PassWordViewModel, FragmentLoginPassw
                     imm.showSoftInput(vb.etLoginPwd, InputMethodManager.SHOW_IMPLICIT)
                 }
             }
-
         })
+
+        vb.icLayout.ivImg.setOnClickListener {
+            ToastUtils.showLong("点击")
+        }
     }
 
     override fun initData() {
@@ -66,15 +70,18 @@ class PasswordLoginFragment : BaseFragment<PassWordViewModel, FragmentLoginPassw
             R.id.cb_login_pwd -> // 是否查看密码
                 ""
             R.id.tv_login -> //登录
-                vm.getLoginMessage(
-                    vb.etLoginUsername.text.toString(),
-                    vb.etLoginPwd.text.toString()
-                )
+                if (Config.AGREE_OR_NOT) {
+                    vm.getLoginMessage(
+                        vb.etLoginUsername.text.toString(),
+                        vb.etLoginPwd.text.toString()
+                    )
+                } else {
+                    ToastUtils.showShort("请阅读并同意服务协议和隐私政策")
+                }
+
             R.id.tv_login_forgetpw -> //忘记密码
                 ""
         }
-
-
     }
 
 }
