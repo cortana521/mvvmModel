@@ -1,5 +1,7 @@
 package com.dzf.mvvm
 
+import com.dzf.mvvm.ui.main.model.DoctorInfRequest
+
 /**
  * @ProjectName : MVVM
  * @Author : Dai Zhi Feng
@@ -12,6 +14,7 @@ class Config {
         val isDeBug = false
         val USER_PHONE = "phone"
         var AGREE_OR_NOT = false //登录在线
+        var doubleIterator:DoctorInfRequest ?= null
         const val USER_SIG = "user_sig"
 
         //用户id

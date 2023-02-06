@@ -33,13 +33,13 @@ class PassWordViewModel : BaseViewModel<FragmentLoginPasswordBinding>() {
     override fun observe(fragment: Fragment, owner: LifecycleOwner) {
         articlesData?.observe(owner, {
             it?.let { it1 ->
-                SPUtils.getInstance()?.put(Config.TOKEN, it1?.token)
-                SPUtils.getInstance()?.put(Config.UID, it1?.doctorNo)
-                SPUtils.getInstance()?.put(Config.USER_AREANO, it1?.areaNo)
-                SPUtils.getInstance()?.put(Config.USER_ROLE, it1?.role)
-                SPUtils.getInstance()?.put(Config.USER_SIG, it1?.sig)
-                fragment.startActivity(Intent(fragment.activity, MainActivity::class.java))
-                fragment.activity?.finish()
+//                SPUtils.getInstance()?.put(Config.TOKEN, it1?.token)
+//                SPUtils.getInstance()?.put(Config.UID, it1?.doctorNo)
+//                SPUtils.getInstance()?.put(Config.USER_AREANO, it1?.areaNo)
+//                SPUtils.getInstance()?.put(Config.USER_ROLE, it1?.role)
+//                SPUtils.getInstance()?.put(Config.USER_SIG, it1?.sig)
+//                fragment.startActivity(Intent(fragment.activity, MainActivity::class.java))
+//                fragment.activity?.finish()
             }
         })
 

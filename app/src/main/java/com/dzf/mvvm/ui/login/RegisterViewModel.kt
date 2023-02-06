@@ -15,7 +15,7 @@ import com.dzf.mvvm.base.BaseViewModel
 import com.dzf.mvvm.databinding.ActivityRegisterBinding
 import com.dzf.mvvm.model.AddressInfoPO
 import com.dzf.mvvm.model.PCACodePO
-import com.dzf.mvvm.ui.login.model.DoctorInfRequest
+import com.dzf.mvvm.ui.main.model.DoctorInfRequest
 import com.dzf.mvvm.ui.login.model.RegisterResponse
 import com.dzf.mvvm.ui.main.MainActivity
 import com.dzf.mvvm.utils.SysUtils

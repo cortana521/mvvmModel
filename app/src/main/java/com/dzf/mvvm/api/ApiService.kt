@@ -2,7 +2,7 @@ package com.dzf.mvvm.api
 
 import com.dzf.mvvm.api.response.BaseResult
 import com.dzf.mvvm.ui.common.model.TestModel
-import com.dzf.mvvm.ui.login.model.DoctorInfRequest
+import com.dzf.mvvm.ui.main.model.DoctorInfRequest
 import com.dzf.mvvm.ui.login.model.LoginResponse
 import com.dzf.mvvm.ui.login.model.RegisterResponse
 import com.dzf.mvvm.ui.main.model.ArticleListBean
