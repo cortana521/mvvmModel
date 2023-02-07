@@ -45,8 +45,6 @@ class HomeModel : BaseViewModel<FragmentHomeBinding>() {
     override fun observe(fragment: Fragment, owner: LifecycleOwner) {
         articlesData.observe(owner, Observer {
             vb.refreshLayout.finishRefresh()
-
-
         })
         errorData.observe(owner, Observer {
             vb.refreshLayout.finishRefresh()

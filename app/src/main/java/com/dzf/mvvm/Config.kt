@@ -36,6 +36,9 @@ class Config {
         //医生验证信息
         const val QUALIFICATION_INF = "qualification_inf"
 
+        //是否同意用户协议
+        const val CONSENT_AGREEMENT = "Consent_agreement";
+
         /**
          * app的状态
          */

@@ -6,17 +6,19 @@ import com.blankj.utilcode.util.StringUtils
 import com.dzf.mvvm.R
 import com.dzf.mvvm.databinding.FragmentMineBinding
 import com.dzf.mvvm.base.BaseFragment
+import com.dzf.mvvm.utils.StatusBarUtil
 
 
 /**
  * @ProjectName : MVVM
  * @Author : Dai Zhi Feng
  * @Time : 2021/9/1 16:01
- * @Description : 文件描述
+ * @Description : 我的
  */
 class MineFragment : BaseFragment<MineModel, FragmentMineBinding>() {
 
     override fun initView() {
+        StatusBarUtil.setColorNoTranslucent(mActivity, ColorUtils.getColor(R.color.white))
         vb.layoutTitle
             .setRightTextVisible(false)
             .setCenterTitleText(StringUtils.getString(R.string.app_home_mine))

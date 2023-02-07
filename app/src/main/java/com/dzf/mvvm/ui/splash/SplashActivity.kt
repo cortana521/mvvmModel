@@ -33,17 +33,6 @@ class SplashActivity : BaseActivity<BaseViewModel<ActivitySplashBinding>, Activi
                 return
             }
         }
-
-//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M && !hasPermission()) {
-//            requestPermissions(
-//                arrayOf(
-//                    Manifest.permission.READ_EXTERNAL_STORAGE,
-//                    Manifest.permission.WRITE_EXTERNAL_STORAGE
-//                ), 1001
-//            )
-//        } else {
-
-//        }
     }
 
     private fun init() {
@@ -66,17 +55,22 @@ class SplashActivity : BaseActivity<BaseViewModel<ActivitySplashBinding>, Activi
         if (privacyDialog == null) {
             privacyDialog = PrivacyDialog(this, R.style.bottom_dialog)
         }
-        if (StringUtils.isEmpty(SPUtils.getInstance().getString(Config.TOKEN))) {
-            privacyDialog!!.show()
-            privacyDialog?.setOnClickEvent(object : PrivacyDialog.OnClickEvent {
-                override fun onAgreeturesClick() {
-                    init()
-                }
+        if (StringUtils.isEmpty(SPUtils.getInstance().getString(Config.CONSENT_AGREEMENT))) {
+            if (StringUtils.isEmpty(SPUtils.getInstance().getString(Config.TOKEN))) {
+                privacyDialog!!.show()
+                privacyDialog?.setOnClickEvent(object : PrivacyDialog.OnClickEvent {
+                    override fun onAgreeturesClick() {
+                        SPUtils.getInstance().put(Config.CONSENT_AGREEMENT, "同意")
+                        init()
+                    }
 
-                override fun onNoAgreeAlbumClick() {
-                    finish()
-                }
-            })
+                    override fun onNoAgreeAlbumClick() {
+                        finish()
+                    }
+                })
+            } else {
+                init()
+            }
         } else {
             init()
         }
