@@ -1,7 +1,11 @@
 package com.dzf.mvvm.ui.main.mine
 
+import android.content.Context
+import com.dzf.mvvm.Config
+import com.dzf.mvvm.api.URLConstant
 import com.dzf.mvvm.databinding.FragmentMineBinding
 import com.dzf.mvvm.base.BaseViewModel
+import com.dzf.mvvm.utils.GlideUtils
 
 
 /**
@@ -11,4 +15,12 @@ import com.dzf.mvvm.base.BaseViewModel
  * @Description : 文件描述
  */
 class MineModel : BaseViewModel<FragmentMineBinding>() {
+
+    fun setdoctorName(name: String){
+        vb.tvMineDoctorName.text = Config?.doubleIterator?.name
+    }
+
+    fun setDoctorHead(mContext: Context,headPath:String){
+        GlideUtils.loadCircleImage(mContext, URLConstant.IMG_IP+ Config?.doubleIterator?.headPath,vb.civHeadPortrait)
+    }
 }

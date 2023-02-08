@@ -6,13 +6,16 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Observer
+import com.blankj.utilcode.util.ImageUtils
 import com.dzf.mvvm.Config
 import com.dzf.mvvm.R
+import com.dzf.mvvm.api.URLConstant
 import com.dzf.mvvm.base.BaseViewModel
 import com.dzf.mvvm.databinding.FragmentHomeBinding
 import com.dzf.mvvm.ui.main.model.ArticleListBean
 import com.dzf.mvvm.ui.main.model.DoctorInfRequest
 import com.dzf.mvvm.ui.main.model.HomeFuncItemBean
+import com.dzf.mvvm.utils.GlideUtils
 import com.dzf.mvvm.utils.SysUtils
 
 /**
@@ -52,10 +55,11 @@ class HomeModel : BaseViewModel<FragmentHomeBinding>() {
 
         /** 医生个人资料 */
         doctorMsg.observe(owner, {
-            it?.let {
+            it.let {
                 vb.refreshLayout.finishRefresh()
-//                Config?.doubleIterator = it
-                vb.tvHomeDoctorName.text = it.data?.name
+                Config?.doubleIterator = it
+                vb.tvHomeDoctorName.text = it?.name
+                GlideUtils.loadCircleImage(fragment.requireActivity(),URLConstant.IMG_IP+it?.headPath,vb.civHeadPortrait)
             }
         })
     }

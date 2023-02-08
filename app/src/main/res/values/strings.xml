@@ -33,4 +33,13 @@
     <string name="fragment_mine_attention">我的关注</string>
     <string name="fragment_mine_courses">我的购课</string>
     <string name="fragment_mine_integral">我的积分</string>
+    <string name="fragment_mine_account">我的账户</string>
+    <string name="fragment_mine_evaluation">我的评价</string>
+    <string name="fragment_mine_diagnosis">收益设置</string>
+    <string name="fragment_mine_voucher">我的优惠券</string>
+    <string name="fragment_mine_address">我的地址</string>
+    <string name="fragment_mine_operation_question">常见问题</string>
+    <string name="fragment_mine_operation_service">联系我们</string>
+    <string name="fragment_mine_feedback_doctor">意见反馈</string>
+    <string name="fragment_mine_about_me">关于金草</string>
 </resources>

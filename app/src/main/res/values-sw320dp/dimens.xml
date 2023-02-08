@@ -37,6 +37,8 @@
     	
     <dimen name="dp_00">0.0000dp</dimen>
     	
+    <dimen name="dp_double_5">0.4444dp</dimen>
+    	
     <dimen name="dp_01">0.8889dp</dimen>
     	
     <dimen name="dp_02">1.7778dp</dimen>

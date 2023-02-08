@@ -21,6 +21,7 @@
     <dimen name="dp_008">-8dp</dimen>
     <dimen name="dp_005">-5dp</dimen>
     <dimen name="dp_00">0dp</dimen>
+    <dimen name="dp_double_5">0.5dp</dimen>
     <dimen name="dp_01">1dp</dimen>
     <dimen name="dp_02">2dp</dimen>
     <dimen name="dp_03">3dp</dimen>

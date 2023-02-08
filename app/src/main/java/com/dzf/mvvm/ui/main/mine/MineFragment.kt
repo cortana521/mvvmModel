@@ -3,9 +3,12 @@ package com.dzf.mvvm.ui.main.mine
 import com.blankj.utilcode.util.ColorUtils
 import com.blankj.utilcode.util.ResourceUtils
 import com.blankj.utilcode.util.StringUtils
+import com.dzf.mvvm.Config
 import com.dzf.mvvm.R
+import com.dzf.mvvm.api.URLConstant
 import com.dzf.mvvm.databinding.FragmentMineBinding
 import com.dzf.mvvm.base.BaseFragment
+import com.dzf.mvvm.utils.GlideUtils
 import com.dzf.mvvm.utils.StatusBarUtil
 
 
@@ -28,7 +31,10 @@ class MineFragment : BaseFragment<MineModel, FragmentMineBinding>() {
             .setBottomLineVisible(true)
             .setRightTextVisible(false)
             .setRightClickListener {
-                showDialog(StringUtils.getString(R.string.app_camera),StringUtils.getString(R.string.app_photo))
+                showDialog(
+                    StringUtils.getString(R.string.app_camera),
+                    StringUtils.getString(R.string.app_photo)
+                )
             }
     }
 
@@ -37,7 +43,13 @@ class MineFragment : BaseFragment<MineModel, FragmentMineBinding>() {
     }
 
     override fun initData() {
-
+        Config?.doubleIterator?.name?.let { vm.setdoctorName(it) }
+        Config?.doubleIterator?.headPath.let {
+            vm.setDoctorHead(
+                requireContext(),
+                URLConstant.IMG_IP + it
+            )
+        }
     }
 
     override fun lazyLoadData() {

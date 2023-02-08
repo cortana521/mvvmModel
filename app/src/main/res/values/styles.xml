@@ -14,7 +14,7 @@
     <!-- ToolBar菜单样式 -->
     <style name="ToolbarTheme" parent="@style/ThemeOverlay.MaterialComponents.ActionBar">
         <item name="actionMenuTextColor">@color/menu_color</item>
-        <item name="android:textSize">16sp</item>
+        <item name="android:textSize">@dimen/text_dimen_16</item>
     </style>
 
     <style name="BottomDialog" parent="@android:style/Theme.Dialog">
@@ -41,20 +41,26 @@
     <!--水平方向的一条分割线-->
     <style name="ViewLineHorizontal">
         <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">1dp</item>
+        <item name="android:layout_height">@dimen/dp_01</item>
         <item name="android:background">@color/divider_line_color</item>
     </style>
 
     <!--水平方向的一条分割线,细一些-->
     <style name="ViewLineHorizontalContent">
         <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">1px</item>
+        <item name="android:layout_height">@dimen/dp_double_5</item>
+        <item name="android:background">@color/divider_line_color</item>
+    </style>
+    <!--水平方向的一条分割线,细一些-->
+    <style name="ViewLineHorizontalContent_10">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/dp_10</item>
         <item name="android:background">@color/divider_line_color</item>
     </style>
 
     <!--竖直方向的一条分割线-->
     <style name="ViewLineVertical">
-        <item name="android:layout_width">1px</item>
+        <item name="android:layout_width">@dimen/dp_01</item>
         <item name="android:layout_height">match_parent</item>
         <item name="android:background">@color/divider_line_color</item>
     </style>
@@ -68,19 +74,19 @@
 
     <!--开方页面的竖直方向的一条分割线-->
     <style name="ViewLineVerticalInPrescription">
-        <item name="android:layout_width">1dp</item>
+        <item name="android:layout_width">@dimen/dp_01</item>
         <item name="android:layout_height">match_parent</item>
         <item name="android:background">@color/divider_line_color</item>
-        <item name="android:layout_marginBottom">8dp</item>
-        <item name="android:layout_marginTop">8dp</item>
+        <item name="android:layout_marginBottom">@dimen/dp_08</item>
+        <item name="android:layout_marginTop">@dimen/dp_08</item>
     </style>
     <!--开方页面的竖直方向的一条分割线-->
     <style name="ViewLineVerticalInPrescriptions">
         <item name="android:layout_width">1px</item>
         <item name="android:layout_height">match_parent</item>
         <item name="android:background">@color/divider_line_color</item>
-        <item name="android:layout_marginBottom">16dp</item>
-        <item name="android:layout_marginTop">16dp</item>
+        <item name="android:layout_marginBottom">@dimen/dp_16</item>
+        <item name="android:layout_marginTop">@dimen/dp_16</item>
     </style>
 
     <style name="custom_dialog2" parent="@android:style/Theme.Dialog">
@@ -144,14 +150,14 @@
     <!--我的页面条目的样式-->
     <style name="item_stytle">
         <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">50dp</item>
+        <item name="android:layout_height">@dimen/dp_45</item>
         <item name="android:textColor">@color/black3</item>
-        <item name="android:textSize">16sp</item>
+        <item name="android:textSize">@dimen/text_dimen_15</item>
         <item name="android:background">@color/white</item>
         <item name="android:paddingLeft">@dimen/dp_15</item>
         <item name="android:paddingRight">@dimen/dp_15</item>
         <item name="android:drawableRight">@mipmap/arrow_right</item>
-        <item name="android:drawablePadding">10dp</item>
+        <item name="android:drawablePadding">@dimen/dp_10</item>
         <item name="android:gravity">center_vertical</item>
     </style>
 

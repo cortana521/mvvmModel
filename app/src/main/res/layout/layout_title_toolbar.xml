@@ -8,7 +8,7 @@
     <RelativeLayout
         android:id="@+id/bg_rll"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/dp_50"
+        android:layout_height="@dimen/dp_45"
         android:background="@color/menu_color">
 
         <ImageView
@@ -69,7 +69,7 @@
     <View
         android:id="@+id/title_line"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/dp_01"
+        android:layout_height="@dimen/dp_double_5"
         android:background="@color/DBDBDB"/>
 
 </LinearLayout>

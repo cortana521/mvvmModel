@@ -7,10 +7,6 @@ package com.dzf.mvvm.ui.main.model
  * @Description : 医生个人信息
  */
 data class DoctorInfRequest(
-    val data: Data
-)
-
-data class Data(
     val areaNo: String,
     val city: String,
     val defaultGoodsPercent: Int,
@@ -43,5 +39,5 @@ data class Data(
     val status: String,
     val tempAreaNo: String,
     val token: String,
-    val vCode: Int
+    val vCode: Any
 )
