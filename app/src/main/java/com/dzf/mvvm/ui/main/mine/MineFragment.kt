@@ -20,7 +20,6 @@ class MineFragment : BaseFragment<MineModel, FragmentMineBinding>() {
     override fun initView() {
         StatusBarUtil.setColorNoTranslucent(mActivity, ColorUtils.getColor(R.color.white))
         vb.layoutTitle
-            .setRightTextVisible(false)
             .setCenterTitleText(StringUtils.getString(R.string.app_home_mine))
             .setCenterTitleTextColor(ColorUtils.getColor(R.color.black))
             .setLeftImgVisible(false)

@@ -1,13 +1,132 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".ui.main.MainActivity">
 
     <com.dzf.mvvm.utils.DefaultTopTitleBarWhite
         android:id="@+id/layout_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        tools:ignore="MissingConstraints" />
+
+    <ImageView
+        android:id="@+id/civ_head_portrait"
+        android:layout_width="@dimen/dp_60"
+        android:layout_height="@dimen/dp_60"
+        android:layout_marginTop="@dimen/dp_20"
+        android:src="@mipmap/icon_load_error"
+        app:layout_constraintHorizontal_bias="0.08"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/layout_title"
+        app:layout_constraintVertical_bias="0.1"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/tv_mine_doctor_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp_15"
+        android:layout_marginTop="@dimen/dp_20"
+        android:text="@string/fragment_mine_doctor_name"
+        android:textColor="@color/black3"
+        android:textSize="@dimen/text_dimen_15"
+        app:layout_constraintLeft_toRightOf="@id/civ_head_portrait"
+        app:layout_constraintTop_toBottomOf="@id/layout_title"
+        tools:ignore="MissingConstraints" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_24"
+        android:layout_marginRight="@dimen/dp_20"
+        android:src="@mipmap/arrow_right"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/layout_title"
+        app:layout_constraintTop_toTopOf="@id/civ_head_portrait"
+        tools:ignore="MissingConstraints" />
+
+    <View
+        android:id="@+id/view_head_line"
+        style="@style/ViewLineHorizontalContent"
+        android:layout_marginTop="@dimen/dp_15"
+        app:layout_constraintTop_toBottomOf="@id/civ_head_portrait"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="50dp" />
+
+    <TextView
+        android:id="@+id/mine_study"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_05"
+        android:drawableTop="@mipmap/mine_class"
+        android:gravity="center"
+        android:text="@string/fragment_mine_study"
+        android:textColor="@color/black101"
+        android:textSize="@dimen/text_dimen_14"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/my_attention"
+        app:layout_constraintTop_toBottomOf="@id/view_head_line"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/my_attention"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_05"
+        android:drawableTop="@mipmap/mine_class"
+        android:gravity="center"
+        android:text="@string/fragment_mine_attention"
+        android:textColor="@color/black101"
+        android:textSize="@dimen/text_dimen_14"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toRightOf="@id/mine_study"
+        app:layout_constraintRight_toLeftOf="@id/my_courses"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/view_head_line"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/my_courses"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_05"
+        android:drawableTop="@mipmap/mine_class"
+        android:gravity="center"
+        android:text="@string/fragment_mine_courses"
+        android:textColor="@color/black101"
+        android:textSize="@dimen/text_dimen_14"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toRightOf="@id/my_attention"
+        app:layout_constraintRight_toLeftOf="@id/my_integral"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/view_head_line"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/my_integral"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_05"
+        android:drawableTop="@mipmap/mine_class"
+        android:gravity="center"
+        android:text="@string/fragment_mine_integral"
+        android:textColor="@color/black101"
+        android:textSize="@dimen/text_dimen_14"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toRightOf="@id/my_courses"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/view_head_line"
+        tools:ignore="MissingConstraints" />
+
+    <androidx.legacy.widget.Space
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_12"
         tools:ignore="MissingConstraints" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

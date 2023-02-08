@@ -55,8 +55,8 @@ class SplashActivity : BaseActivity<BaseViewModel<ActivitySplashBinding>, Activi
         if (privacyDialog == null) {
             privacyDialog = PrivacyDialog(this, R.style.bottom_dialog)
         }
-        if (StringUtils.isEmpty(SPUtils.getInstance().getString(Config.CONSENT_AGREEMENT))) {
-            if (StringUtils.isEmpty(SPUtils.getInstance().getString(Config.TOKEN))) {
+        if (SPUtils.getInstance().getString(Config.CONSENT_AGREEMENT).isNullOrEmpty()) {
+            if (SPUtils.getInstance().getString(Config.TOKEN).isEmpty()) {
                 privacyDialog!!.show()
                 privacyDialog?.setOnClickEvent(object : PrivacyDialog.OnClickEvent {
                     override fun onAgreeturesClick() {

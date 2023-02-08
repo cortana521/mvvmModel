@@ -1,7 +1,5 @@
 package com.dzf.mvvm.ui.main.model
 
-import com.dzf.mvvm.api.response.BaseResult
-
 /**
  * @ProjectName : MVVM
  * @Author : Dai Zhi Feng

@@ -21,15 +21,21 @@
     	
     <dimen name="text_dimen_16">17.7778sp</dimen>
     	
+    <dimen name="text_dimen_17">18.8889sp</dimen>
+    	
     <dimen name="text_dimen_18">20.0000sp</dimen>
     	
     <dimen name="text_dimen_19">21.1111sp</dimen>
+    	
+    <dimen name="text_dimen_20">22.2222sp</dimen>
     	
     <dimen name="text_dimen_24">26.6667sp</dimen>
     	
     <dimen name="dp_008">-8.8889dp</dimen>
     	
     <dimen name="dp_005">-5.5556dp</dimen>
+    	
+    <dimen name="dp_00">0.0000dp</dimen>
     	
     <dimen name="dp_01">1.1111dp</dimen>
     	

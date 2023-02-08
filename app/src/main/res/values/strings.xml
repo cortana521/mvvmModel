@@ -28,4 +28,9 @@
     <string name="app_doctorProtocol"><u>《金草中医医生协议》</u></string>
     <string name="title_online_prescribing">线上开方</string>
     <string name="title_camera_prescribing">拍照开方</string>
+    <string name="fragment_mine_study">我的学习</string>
+    <string name="fragment_mine_doctor_name">医生姓名</string>
+    <string name="fragment_mine_attention">我的关注</string>
+    <string name="fragment_mine_courses">我的购课</string>
+    <string name="fragment_mine_integral">我的积分</string>
 </resources>
