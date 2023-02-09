@@ -17,10 +17,10 @@ import com.dzf.mvvm.utils.GlideUtils
 class MineModel : BaseViewModel<FragmentMineBinding>() {
 
     fun setdoctorName(name: String){
-        vb.tvMineDoctorName.text = Config?.doubleIterator?.name
+        vb.tvMineDoctorName.text = name
     }
 
     fun setDoctorHead(mContext: Context,headPath:String){
-        GlideUtils.loadCircleImage(mContext, URLConstant.IMG_IP+ Config?.doubleIterator?.headPath,vb.civHeadPortrait)
+        GlideUtils.loadCircleImage(mContext, headPath,vb.civHeadPortrait)
     }
 }

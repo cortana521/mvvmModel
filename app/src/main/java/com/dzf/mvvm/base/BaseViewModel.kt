@@ -48,6 +48,13 @@ open class BaseViewModel<VB : ViewBinding> : ViewModel() {
 
     }
 
+    /**
+     * 处理token过期
+     */
+    open fun getDataTokenExpiration(status:Int){
+
+    }
+
     private fun showLoading() {
         isShowLoading.value = true
     }
@@ -143,7 +150,7 @@ open class BaseViewModel<VB : ViewBinding> : ViewModel() {
                         liveData.value = result.data
                     }
                     2 -> {//token失效
-
+                        getDataTokenExpiration(result.status)
                     }
                     else -> {
                         LogUtils.e("请求错误>>" + result.msg)

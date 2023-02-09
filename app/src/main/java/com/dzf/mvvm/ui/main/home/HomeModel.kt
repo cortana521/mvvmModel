@@ -28,12 +28,14 @@ class HomeModel : BaseViewModel<FragmentHomeBinding>() {
 
     private var articlesData = MutableLiveData<ArticleListBean>()
     private var doctorMsg = MutableLiveData<DoctorInfRequest>()
+    private var mContext: Context? = null
 
     fun getArticleList(page: Int, isShowLoading: Boolean = false) {
         launch({ httpUtil.getArticleList(page) }, articlesData, isShowLoading)
     }
 
     fun getDoctorMsg(mContext: Context) {
+        this.mContext = mContext
         launch({
             httpUtil.getDoctorInfo(
                 "ANDROID",
@@ -59,9 +61,21 @@ class HomeModel : BaseViewModel<FragmentHomeBinding>() {
                 vb.refreshLayout.finishRefresh()
                 Config?.doubleIterator = it
                 vb.tvHomeDoctorName.text = it?.name
-                GlideUtils.loadCircleImage(fragment.requireActivity(),URLConstant.IMG_IP+it?.headPath,vb.civHeadPortrait)
+                GlideUtils.loadCircleImage(
+                    fragment.requireActivity(),
+                    URLConstant.IMG_IP + it?.headPath,
+                    vb.civHeadPortrait
+                )
             }
         })
+    }
+
+    override fun getDataTokenExpiration(status: Int) {
+        super.getDataTokenExpiration(status)
+        vb.refreshLayout.finishRefresh()
+        if (status == 2) {
+            mContext?.let { goToLogin(it) }
+        }
     }
 
     fun setHomeFuncData(): ArrayList<HomeFuncItemBean>? {
