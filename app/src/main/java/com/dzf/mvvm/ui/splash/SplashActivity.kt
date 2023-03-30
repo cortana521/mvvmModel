@@ -38,7 +38,7 @@ class SplashActivity : BaseActivity<BaseViewModel<ActivitySplashBinding>, Activi
     private fun init() {
         SysUtils.initFiles()
 //            getjumpActivity(ActivityARouter.LOGIN)
-        if (StringUtils.isEmpty(SPUtils.getInstance().getString(Config.TOKEN))) {
+        if (SPUtils.getInstance().getString(Config.TOKEN).isNullOrEmpty()) {
             startActivity(Intent(this, LoginActivity::class.java))
         } else {
             Config.token = SPUtils.getInstance().getString(Config.TOKEN)!!

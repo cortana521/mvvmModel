@@ -17,7 +17,7 @@ object GenericParadigmUtil {
         } else parseGenericParadigm(`object`.javaClass, position)
     }
 
-    fun parseGenericParadigm(clazz: Class<*>?, position: Int): Class<*>? {
+    private fun parseGenericParadigm(clazz: Class<*>?, position: Int): Class<*>? {
         if (clazz == null) {
             return null
         }
@@ -57,7 +57,7 @@ object GenericParadigmUtil {
         )
     }
 
-    fun parseInterfaceGenericParadigm(clazz: Class<*>?, who: Int, position: Int): Class<*>? {
+    private fun parseInterfaceGenericParadigm(clazz: Class<*>?, who: Int, position: Int): Class<*>? {
         if (clazz == null) {
             return null
         }
@@ -80,7 +80,7 @@ object GenericParadigmUtil {
         )
     }
 
-    fun parseInterfaceGenericParadigm(
+    private fun parseInterfaceGenericParadigm(
         clazz: Class<*>,
         who: Int,
         pathfinders: List<Pathfinder>?
@@ -107,7 +107,7 @@ object GenericParadigmUtil {
         } else isInterfaceGenericParadigm(`object`.javaClass)
     }
 
-    fun isInterfaceGenericParadigm(clazz: Class<*>?): Boolean {
+    private fun isInterfaceGenericParadigm(clazz: Class<*>?): Boolean {
         if (clazz == null) {
             return false
         }
@@ -121,7 +121,7 @@ object GenericParadigmUtil {
         } else isGenericParadigm(`object`.javaClass)
     }
 
-    fun isGenericParadigm(clazz: Class<*>?): Boolean {
+    private fun isGenericParadigm(clazz: Class<*>?): Boolean {
         if (clazz == null) {
             return false
         }

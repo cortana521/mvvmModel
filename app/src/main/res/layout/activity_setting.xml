@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/F5F5F5"
+    tools:context=".ui.setting.SettingActivity">
+
+    <com.dzf.mvvm.utils.DefaultTopTitleBarWhite
+        android:id="@+id/layout_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:ignore="MissingConstraints" />
+
+    <RelativeLayout
+        android:id="@+id/rl_setting_show_inf"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_45"
+        android:layout_marginTop="@dimen/dp_05"
+        android:background="@color/white"
+        android:gravity="center_vertical"
+        android:paddingLeft="@dimen/dp_15"
+        android:paddingRight="@dimen/dp_15"
+        app:layout_constraintTop_toBottomOf="@id/layout_title"
+        tools:ignore="MissingConstraints">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="@string/app_doctor_message"
+            android:textColor="@color/black3"
+            android:textSize="@dimen/text_dimen_12" />
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/switch_setting"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:clickable="false" />
+    </RelativeLayout>
+
+    <View
+        android:id="@+id/view_line_one"
+        style="@style/ViewLineHorizontalContent"
+        app:layout_constraintTop_toBottomOf="@id/rl_setting_show_inf"
+        tools:ignore="MissingConstraints" />
+
+    <RelativeLayout
+        android:id="@+id/rl_setting_show_med"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_45"
+        android:background="@color/white"
+        android:gravity="center_vertical"
+        android:paddingLeft="@dimen/dp_15"
+        android:paddingRight="@dimen/dp_15"
+        app:layout_constraintTop_toBottomOf="@id/view_line_one"
+        tools:ignore="MissingConstraints">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="@string/app_medicinal_materials"
+            android:textColor="@color/black3"
+            android:textSize="@dimen/text_dimen_12" />
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/switch_setting_med"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:clickable="false" />
+    </RelativeLayout>
+
+    <View
+        android:id="@+id/view_line_two"
+        style="@style/ViewLineHorizontalContent"
+        app:layout_constraintTop_toBottomOf="@id/rl_setting_show_med"
+        tools:ignore="MissingConstraints" />
+
+    <RelativeLayout
+        android:id="@+id/rl_setting_automatic_send_single"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_45"
+        android:background="@color/white"
+        android:gravity="center_vertical"
+        android:paddingLeft="@dimen/dp_15"
+        android:paddingRight="@dimen/dp_15"
+        app:layout_constraintTop_toBottomOf="@id/view_line_two"
+        tools:ignore="MissingConstraints">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="@string/app_follow_up_sheet"
+            android:textColor="@color/black3"
+            android:textSize="@dimen/dp_12" />
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/switch_automatic_send_single"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:clickable="false" />
+    </RelativeLayout>
+
+    <View
+        android:id="@+id/view_line_three"
+        style="@style/ViewLineHorizontalContent"
+        app:layout_constraintTop_toBottomOf="@id/rl_setting_automatic_send_single"
+        tools:ignore="MissingConstraints" />
+
+    <RelativeLayout
+        android:id="@+id/rl_setting_play"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_45"
+        android:background="@color/white"
+        android:gravity="center_vertical"
+        android:paddingLeft="@dimen/dp_15"
+        android:paddingRight="@dimen/dp_15"
+        app:layout_constraintTop_toBottomOf="@id/view_line_three"
+        tools:ignore="MissingConstraints">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="@string/app_wifi_play"
+            android:textColor="@color/black3"
+            android:textSize="@dimen/text_dimen_12" />
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/switch_automatic_play"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:clickable="false" />
+    </RelativeLayout>
+
+    <View
+        android:id="@+id/view_line_four"
+        style="@style/ViewLineHorizontalContent"
+        app:layout_constraintTop_toBottomOf="@id/rl_setting_play"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/tv_setting_message"
+        style="@style/item_stytle"
+        android:drawableRight="@mipmap/arrow_right_black"
+        android:text="@string/app_message_notify"
+        android:textSize="@dimen/text_dimen_12"
+        app:layout_constraintTop_toBottomOf="@id/view_line_four"
+        tools:ignore="MissingConstraints" />
+
+    <View
+        android:id="@+id/view_line_five"
+        style="@style/ViewLineHorizontalContent"
+        app:layout_constraintTop_toBottomOf="@id/tv_setting_message"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/tv_setting_update_pwd"
+        style="@style/item_stytle"
+        android:drawableRight="@mipmap/arrow_right_black"
+        android:text="@string/app_change_password"
+        android:textSize="@dimen/text_dimen_12"
+        app:layout_constraintTop_toBottomOf="@id/view_line_five"
+        tools:ignore="MissingConstraints" />
+
+    <View
+        android:id="@+id/view_line_six"
+        style="@style/ViewLineHorizontalContent"
+        app:layout_constraintTop_toBottomOf="@id/tv_setting_update_pwd"
+        tools:ignore="MissingConstraints" />
+
+    <LinearLayout
+        android:id="@+id/ll_setting_cache"
+        style="@style/item_stytle"
+        app:layout_constraintTop_toBottomOf="@id/view_line_six"
+        tools:ignore="MissingConstraints">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="@string/app_clear_cache"
+            android:textColor="@color/black3"
+            android:textSize="@dimen/text_dimen_12" />
+
+        <TextView
+            android:id="@+id/tv_setting_cache"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_dimen_12" />
+
+    </LinearLayout>
+
+    <View
+        android:id="@+id/view_line_seven"
+        style="@style/ViewLineHorizontalContent"
+        app:layout_constraintTop_toBottomOf="@id/ll_setting_cache"
+        tools:ignore="MissingConstraints" />
+
+    <RelativeLayout
+        android:id="@+id/rl_setting_up_version"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_45"
+        android:background="@color/white"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingLeft="@dimen/dp_16"
+        android:paddingRight="@dimen/dp_16"
+        app:layout_constraintTop_toBottomOf="@id/view_line_seven"
+        tools:ignore="MissingConstraints">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/app_version_information"
+            android:textColor="@color/black3"
+            android:textSize="@dimen/text_dimen_12" />
+
+        <TextView
+            android:id="@+id/tvVersion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:drawableRight="@mipmap/arrow_right_black"
+            android:drawablePadding="@dimen/dp_08"
+            android:text=""
+            android:textColor="@color/black3"
+            android:textSize="@dimen/text_dimen_12" />
+    </RelativeLayout>
+
+    <View
+        android:id="@+id/view_line_eight"
+        style="@style/ViewLineHorizontalContent"
+        app:layout_constraintTop_toBottomOf="@id/rl_setting_up_version"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/tv_setting_service"
+        style="@style/item_stytle"
+        android:drawableRight="@mipmap/arrow_right_black"
+        android:text="@string/app_service_agreement"
+        android:textSize="@dimen/text_dimen_12"
+        app:layout_constraintTop_toBottomOf="@id/view_line_eight"
+        tools:ignore="MissingConstraints" />
+
+    <View
+        android:id="@+id/view_line_nine"
+        style="@style/ViewLineHorizontalContent"
+        app:layout_constraintTop_toBottomOf="@id/tv_setting_service"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/tv_setting_privacy"
+        style="@style/item_stytle"
+        android:drawableRight="@mipmap/arrow_right_black"
+        android:text="@string/app_privacy_policy"
+        android:textSize="@dimen/text_dimen_12"
+        app:layout_constraintTop_toBottomOf="@id/view_line_nine"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/tv_setting_logout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_40"
+        android:layout_marginTop="@dimen/dp_50"
+        android:background="@drawable/shape_login_btn"
+        android:gravity="center"
+        android:text="@string/app_login_out"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_dimen_16"
+        app:layout_constraintTop_toBottomOf="@id/tv_setting_privacy"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="18dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

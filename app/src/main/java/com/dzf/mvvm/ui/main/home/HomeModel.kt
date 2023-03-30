@@ -78,7 +78,7 @@ class HomeModel : BaseViewModel<FragmentHomeBinding>() {
         }
     }
 
-    fun setHomeFuncData(): ArrayList<HomeFuncItemBean>? {
+    fun setHomeFuncData(): ArrayList<HomeFuncItemBean> {
         var mData: ArrayList<HomeFuncItemBean>? = ArrayList()
         //数据
         val homeFuncItem = HomeFuncItemBean(R.mipmap.not_appointment, "看诊列表", 0)
@@ -101,6 +101,6 @@ class HomeModel : BaseViewModel<FragmentHomeBinding>() {
         mData?.add(homeFuncItem7)
         mData?.add(homeFuncItem10)
         mData?.add(homeFuncItem8)
-        return mData
+        return mData!!
     }
 }

@@ -1,5 +1,6 @@
 package com.dzf.mvvm.base
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.content.pm.ActivityInfo
 import android.content.res.Configuration
@@ -39,9 +40,8 @@ abstract class BaseActivity<VM : BaseViewModel<VB>, VB : ViewBinding> : AppCompa
     private var drawDialog: DrawDialog? = null
     private var loadingDialog: LodingDialog? = null
 
-    @Suppress("UNCHECKED_CAST")
     override fun onCreate(savedInstanceState: Bundle?) {
-        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT); // 禁用横屏
+        requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT; // 禁用横屏
         super.onCreate(savedInstanceState)
         initResources()
         var pathfinders = ArrayList<GenericParadigmUtil.Pathfinder>()
@@ -90,7 +90,7 @@ abstract class BaseActivity<VM : BaseViewModel<VB>, VB : ViewBinding> : AppCompa
         val fragment: Fragment = fragments.get(position)
         if (null != fragment && mCurrentFragment !== fragment) {
             val transaction: FragmentTransaction =
-                getSupportFragmentManager().beginTransaction()
+                supportFragmentManager.beginTransaction()
             if (mCurrentFragment != null) {
                 transaction.hide(mCurrentFragment!!)
             }
@@ -188,7 +188,7 @@ abstract class BaseActivity<VM : BaseViewModel<VB>, VB : ViewBinding> : AppCompa
      * 是否已登录
      */
     fun getisFristLogin() {
-        if (!SPUtils.getInstance().getString(Config.TOKEN)?.isNullOrBlank()!!) {
+        if (!SPUtils.getInstance().getString(Config.TOKEN).isNullOrEmpty()) {
             startActivity(Intent(mContext, MainActivity::class.java))
         }
     }

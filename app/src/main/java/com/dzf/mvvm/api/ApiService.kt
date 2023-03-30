@@ -1,6 +1,7 @@
 package com.dzf.mvvm.api
 
 import com.dzf.mvvm.api.response.BaseResult
+import com.dzf.mvvm.model.BaseStringResult
 import com.dzf.mvvm.ui.common.model.TestModel
 import com.dzf.mvvm.ui.main.model.DoctorInfRequest
 import com.dzf.mvvm.ui.login.model.LoginResponse
@@ -28,6 +29,12 @@ interface ApiService {
         @Field("device") code: String
     )
             : BaseResult<LoginResponse>
+
+    /**
+     * 退出
+     */
+    @POST("api/doctor/logout")
+    suspend fun getLoginOut(): BaseResult<String>
 
     /**
      * 获取医生信息

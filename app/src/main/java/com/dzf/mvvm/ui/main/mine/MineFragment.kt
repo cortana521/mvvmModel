@@ -1,5 +1,6 @@
 package com.dzf.mvvm.ui.main.mine
 
+import android.content.Intent
 import com.blankj.utilcode.util.ColorUtils
 import com.blankj.utilcode.util.ResourceUtils
 import com.blankj.utilcode.util.StringUtils
@@ -8,6 +9,7 @@ import com.dzf.mvvm.R
 import com.dzf.mvvm.api.URLConstant
 import com.dzf.mvvm.databinding.FragmentMineBinding
 import com.dzf.mvvm.base.BaseFragment
+import com.dzf.mvvm.ui.setting.SettingActivity
 import com.dzf.mvvm.utils.GlideUtils
 import com.dzf.mvvm.utils.StatusBarUtil
 
@@ -31,10 +33,7 @@ class MineFragment : BaseFragment<MineModel, FragmentMineBinding>() {
             .setBottomLineVisible(true)
             .setRightTextVisible(false)
             .setRightClickListener {
-                showDialog(
-                    StringUtils.getString(R.string.app_camera),
-                    StringUtils.getString(R.string.app_photo)
-                )
+                startActivity(Intent(activity,SettingActivity::class.java))
             }
     }
 

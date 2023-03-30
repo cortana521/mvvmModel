@@ -42,30 +42,30 @@
 
                     <RelativeLayout
                         android:layout_width="match_parent"
-                        android:layout_height="130dp"
-                        android:layout_marginLeft="20dp"
-                        android:layout_marginTop="20dp"
-                        android:layout_marginRight="20dp"
+                        android:layout_height="@dimen/dp_120"
+                        android:layout_marginLeft="@dimen/dp_20"
+                        android:layout_marginTop="@dimen/dp_20"
+                        android:layout_marginRight="@dimen/dp_20"
                         android:background="@mipmap/icon_home_brack_bg"
                         android:orientation="horizontal">
 
                         <ImageView
                             android:id="@+id/civ_head_portrait"
-                            android:layout_width="60dp"
-                            android:layout_height="60dp"
-                            android:layout_marginLeft="20dp"
-                            android:layout_marginTop="30dp"
+                            android:layout_width="@dimen/dp_60"
+                            android:layout_height="@dimen/dp_60"
+                            android:layout_marginLeft="@dimen/dp_20"
+                            android:layout_marginTop="@dimen/dp_30"
                             android:src="@mipmap/icon_load_error" />
 
                         <TextView
                             android:id="@+id/tv_home_doctor_name"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginLeft="20dp"
-                            android:layout_marginTop="31dp"
+                            android:layout_marginLeft="@dimen/dp_20"
+                            android:layout_marginTop="@dimen/dp_30"
                             android:layout_toRightOf="@+id/civ_head_portrait"
                             android:textColor="@color/D27E00"
-                            android:textSize="17sp"
+                            android:textSize="@dimen/text_dimen_17"
                             android:textStyle="bold" />
 
                         <RelativeLayout
@@ -89,22 +89,22 @@
                                 android:layout_centerInParent="true"
                                 android:text="未登录"
                                 android:textColor="@color/BCBCBC"
-                                android:textSize="13sp" />
+                                android:textSize="@dimen/text_dimen_13" />
 
                         </RelativeLayout>
 
                         <TextView
                             android:id="@+id/push_ad"
-                            android:layout_width="95dp"
-                            android:layout_height="45dp"
+                            android:layout_width="@dimen/dp_90"
+                            android:layout_height="@dimen/dp_45"
                             android:layout_alignParentRight="true"
                             android:layout_centerVertical="true"
-                            android:layout_marginRight="20dp"
+                            android:layout_marginRight="@dimen/dp_20"
                             android:background="@mipmap/icon_home_brack_btn"
                             android:gravity="center"
                             android:text="发布公告"
                             android:textColor="@color/shape_status_bg"
-                            android:textSize="16sp"
+                            android:textSize="@dimen/text_dimen_16"
                             android:textStyle="bold" />
 
                         <LinearLayout
@@ -121,53 +121,14 @@
                                 android:layout_gravity="bottom|center_horizontal"
                                 android:background="@drawable/shape_home_status"
                                 android:drawableRight="@mipmap/arrow_right_white"
-                                android:drawablePadding="10dp"
+                                android:drawablePadding="@dimen/dp_10"
                                 android:text="未认证"
                                 android:textColor="@color/white"
-                                android:textSize="13sp"
-                                android:visibility="gone" />
-
-                            <TextView
-                                android:id="@+id/tv_home_uncheck_tip"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="center"
-                                android:text="上传证书 完善资料 开启我的医馆"
-                                android:textColor="#C9A063"
-                                android:textSize="14sp"
+                                android:textSize="@dimen/text_dimen_13"
                                 android:visibility="gone" />
 
                         </LinearLayout>
 
-                        <RelativeLayout
-                            android:id="@+id/rl_operation"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_alignParentEnd="true"
-                            android:layout_alignParentRight="true"
-                            android:layout_alignParentBottom="true"
-                            android:layout_marginEnd="109dp"
-                            android:layout_marginRight="109dp"
-                            android:layout_marginBottom="55dp"
-                            android:paddingRight="14dp"
-                            android:visibility="gone">
-
-                            <ImageView
-                                android:id="@+id/iv_icon"
-                                android:layout_width="20dp"
-                                android:layout_height="20dp"
-                                android:layout_alignParentRight="true"
-                                android:layout_marginRight="16dp"
-                                android:src="@drawable/operational_guidelines" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_below="@+id/iv_icon"
-                                android:layout_alignParentRight="true"
-                                android:layout_marginTop="8dp"
-                                android:text="常见问题" />
-                        </RelativeLayout>
                     </RelativeLayout>
 
                     <LinearLayout
@@ -175,7 +136,7 @@
                         android:layout_height="wrap_content"
                         android:background="@drawable/salesman_bg_top_white_15"
                         android:gravity="center_vertical"
-                        android:minHeight="100dp"
+                        android:minHeight="@dimen/dp_100"
                         android:orientation="horizontal">
 
                         <TextView
@@ -184,11 +145,24 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:drawableTop="@mipmap/online_appointment"
-                            android:drawablePadding="3dp"
+                            android:drawablePadding="@dimen/dp_03"
                             android:gravity="center_horizontal"
                             android:text="@string/title_online_prescribing"
                             android:textColor="@color/black3"
-                            android:textSize="14sp"
+                            android:textSize="@dimen/text_dimen_14"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/tv_home_particles"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:drawableTop="@mipmap/icon_keliji"
+                            android:drawablePadding="@dimen/dp_03"
+                            android:gravity="center_horizontal"
+                            android:text="免煎颗粒"
+                            android:textColor="@color/black3"
+                            android:textSize="@dimen/text_dimen_14"
                             android:textStyle="bold" />
 
                         <TextView
@@ -196,13 +170,14 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:drawableTop="@mipmap/camera_appointment"
-                            android:drawablePadding="3dp"
+                            android:drawableTop="@mipmap/icon_proprietary_medicine"
+                            android:drawablePadding="@dimen/dp_03"
                             android:gravity="center_horizontal"
-                            android:text="@string/title_camera_prescribing"
+                            android:text="中成药"
                             android:textColor="@color/black3"
-                            android:textSize="14sp"
-                            android:textStyle="bold" />
+                            android:textSize="@dimen/text_dimen_14"
+                            android:textStyle="bold"
+                            android:visibility="visible" />
 
                         <TextView
                             android:id="@+id/tv_home_look_appoint"
@@ -210,93 +185,141 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:drawableTop="@mipmap/home_zf"
-                            android:drawablePadding="3dp"
+                            android:drawablePadding="@dimen/dp_03"
                             android:gravity="center_horizontal"
                             android:text="专病专方"
                             android:textColor="@color/black3"
-                            android:textSize="14sp"
+                            android:textSize="@dimen/text_dimen_14"
                             android:textStyle="bold" />
 
                     </LinearLayout>
 
-                    <LinearLayout
+                    <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="@color/white"
+                        android:paddingLeft="@dimen/dp_20"
+                        android:paddingTop="@dimen/dp_20"
+                        android:text="辅诊开方"
+                        android:textColor="@color/black3"
+                        android:textSize="@dimen/text_dimen_16"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dp_70"
+                        android:background="@color/white"
                         android:gravity="center_vertical"
-                        android:minHeight="100dp"
                         android:orientation="horizontal"
-                        >
+                        android:paddingTop="10dp">
 
                         <RelativeLayout
                             android:id="@+id/rl_appoint"
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                            android:layout_height="@dimen/dp_70"
                             android:layout_weight="1"
-                            android:layout_marginLeft="15dp"
-                            android:background="@mipmap/icon_home_brack_ai">
+                            android:gravity="center_vertical">
+
+                            <ImageView
+                                android:id="@+id/iv_home_openreceipt_appoint"
+                                android:layout_width="wrap_content"
+                                android:layout_height="@dimen/dp_40"
+                                android:layout_centerHorizontal="true"
+                                android:src="@drawable/icon_ai_fuzhen" />
 
                             <TextView
                                 android:id="@+id/tv_home_openreceipt_appoint"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_marginLeft="20dp"
-                                android:layout_marginTop="20dp"
-                                android:layout_weight="1"
+                                android:layout_below="@id/iv_home_openreceipt_appoint"
+                                android:layout_centerHorizontal="true"
                                 android:gravity="center_horizontal"
-                                android:visibility="gone"
                                 android:text="经典辅诊"
                                 android:textColor="@color/black3"
-                                android:textSize="23sp"
-                                android:textStyle="bold" />
-
-                            <TextView
-                                android:id="@+id/tv_home_appoint_hint"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_below="@id/tv_home_openreceipt_appoint"
-                                android:layout_marginLeft="23dp"
-                                android:layout_marginTop="15dp"
-                                android:visibility="gone"
-                                android:text=""
-                                android:textColor="@color/black3"
-                                android:textSize="14sp" />
-
+                                android:textSize="@dimen/text_dimen_13" />
                         </RelativeLayout>
 
                         <RelativeLayout
                             android:id="@+id/rl_partyt"
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                            android:layout_height="@dimen/dp_70"
                             android:layout_weight="1"
-                            android:layout_marginRight="15dp"
-                            android:background="@mipmap/icon_home_brack_fy">
+                            android:gravity="center_vertical">
+
+                            <ImageView
+                                android:id="@+id/iv_home_After_the_partyt"
+                                android:layout_width="wrap_content"
+                                android:layout_height="@dimen/dp_40"
+                                android:layout_centerHorizontal="true"
+                                android:src="@drawable/icon_ai_fuyang" />
 
                             <TextView
                                 android:id="@+id/tv_home_After_the_partyt"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_marginLeft="20dp"
-                                android:layout_marginTop="20dp"
+                                android:layout_below="@id/iv_home_After_the_partyt"
+                                android:layout_centerHorizontal="true"
                                 android:layout_weight="1"
                                 android:gravity="center_horizontal"
-                                android:text="扶阳开方"
-                                android:visibility="gone"
+                                android:text="扶阳辅诊"
                                 android:textColor="@color/black3"
-                                android:textSize="23sp"
-                                android:textStyle="bold" />
+                                android:textSize="@dimen/text_dimen_13" />
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/rl_gao_Auxiliary"
+                            android:layout_width="wrap_content"
+                            android:layout_height="@dimen/dp_70"
+                            android:layout_weight="1"
+                            android:gravity="center_vertical">
+
+                            <ImageView
+                                android:id="@+id/iv_home_gao_Auxiliary"
+                                android:layout_width="wrap_content"
+                                android:layout_height="@dimen/dp_40"
+                                android:layout_centerHorizontal="true"
+                                android:src="@drawable/icon_ai_gaofang" />
 
                             <TextView
-                                android:id="@+id/tv_party"
+                                android:id="@+id/tv_home_gao_Auxiliary"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_below="@id/tv_home_After_the_partyt"
-                                android:layout_marginLeft="23dp"
-                                android:visibility="gone"
-                                android:layout_marginTop="15dp"
-                                android:text=""
+                                android:layout_below="@id/iv_home_gao_Auxiliary"
+                                android:layout_centerHorizontal="true"
+                                android:layout_weight="1"
+                                android:gravity="center_horizontal"
+                                android:text="膏方辅诊"
                                 android:textColor="@color/black3"
-                                android:textSize="14sp" />
+                                android:textSize="@dimen/text_dimen_13"
+                                android:visibility="visible" />
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/rl_acupuncture"
+                            android:layout_width="wrap_content"
+                            android:layout_height="@dimen/dp_70"
+                            android:layout_weight="1"
+                            android:gravity="center_vertical"
+                            android:visibility="visible">
+
+                            <ImageView
+                                android:id="@+id/iv_home_acupuncture"
+                                android:layout_width="wrap_content"
+                                android:layout_height="@dimen/dp_40"
+                                android:layout_centerHorizontal="true"
+                                android:src="@drawable/icon_ai_zhenjiu" />
+
+                            <TextView
+                                android:id="@+id/tv_home_acupuncture"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/iv_home_acupuncture"
+                                android:layout_centerHorizontal="true"
+                                android:layout_weight="1"
+                                android:gravity="center_horizontal"
+                                android:text="针灸辅诊"
+                                android:textColor="@color/black3"
+                                android:textSize="@dimen/text_dimen_13" />
                         </RelativeLayout>
                     </LinearLayout>
                 </LinearLayout>
@@ -307,7 +330,7 @@
                     android:layout_height="wrap_content"
                     android:adjustViewBounds="true"
                     android:background="@color/white"
-                    android:paddingTop="10dp"
+                    android:paddingTop="@dimen/dp_10"
                     android:src="@mipmap/icon_paste_haoli" />
 
                 <LinearLayout
@@ -385,7 +408,7 @@
                         android:id="@+id/rcy_home"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:paddingBottom="10dp" />
+                        android:paddingBottom="@dimen/dp_10" />
                 </LinearLayout>
             </LinearLayout>
 

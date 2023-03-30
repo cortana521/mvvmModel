@@ -1,6 +1,7 @@
 package com.dzf.mvvm.ui.main.home
 
 import android.content.DialogInterface
+import android.view.View
 import androidx.recyclerview.widget.GridLayoutManager
 import com.blankj.utilcode.util.ColorUtils
 import com.blankj.utilcode.util.ResourceUtils
@@ -14,6 +15,7 @@ import com.dzf.mvvm.event.EventMessage
 import com.dzf.mvvm.base.BaseFragment
 import com.dzf.mvvm.ui.main.adapter.HomeFuncAdapter
 import com.dzf.mvvm.ui.main.model.HomeFuncItemBean
+import com.dzf.mvvm.utils.CommonlyUsedInterface
 import com.dzf.mvvm.utils.StatusBarUtil
 import com.scwang.smartrefresh.layout.api.RefreshLayout
 import com.scwang.smartrefresh.layout.listener.OnRefreshLoadMoreListener
@@ -25,7 +27,7 @@ import kotlinx.android.synthetic.main.fragment_home.*
  * @Time : 2021/9/1 15:57
  * @Description : 首页
  */
-class HomeFragment : BaseFragment<HomeModel, FragmentHomeBinding>() {
+class HomeFragment : BaseFragment<HomeModel, FragmentHomeBinding>(), View.OnClickListener {
     var adapter: HomeFuncAdapter? = null
     var list: ArrayList<HomeFuncItemBean>? = ArrayList()
     var page: Int = 0
@@ -64,6 +66,14 @@ class HomeFragment : BaseFragment<HomeModel, FragmentHomeBinding>() {
     }
 
     override fun initClick() {
+        CommonlyUsedInterface.setViewClick(this, vb.tvHomeOnlineAppoint)
+        CommonlyUsedInterface.setViewClick(this, vb.tvHomeParticles)
+        CommonlyUsedInterface.setViewClick(this, vb.tvHomeCameraAppoint)
+        CommonlyUsedInterface.setViewClick(this, vb.tvHomeLookAppoint)
+        CommonlyUsedInterface.setViewClick(this, vb.rlAppoint)
+        CommonlyUsedInterface.setViewClick(this, vb.rlPartyt)
+        CommonlyUsedInterface.setViewClick(this, vb.rlGaoAuxiliary)
+        CommonlyUsedInterface.setViewClick(this, vb.rlAcupuncture)
         vb.refreshLayout.setOnRefreshLoadMoreListener(object : OnRefreshLoadMoreListener {
             override fun onRefresh(refreshLayout: RefreshLayout) {
                 vm.getDoctorMsg(mActivity)
@@ -98,6 +108,19 @@ class HomeFragment : BaseFragment<HomeModel, FragmentHomeBinding>() {
             ToastUtils.showShort("主页：刷新")
             page = 0
             vm.getArticleList(page)
+        }
+    }
+
+    override fun onClick(v: View?) {
+        when (v?.id) {
+            R.id.tv_home_openreceipt_appoint ->
+                ToastUtils.showShort("点击了")
+            R.id.tv_home_particles ->
+                ""
+            R.id.tv_home_camera_appoint ->
+                ""
+            R.id.tv_home_look_appoint ->
+                ""
         }
     }
 }
