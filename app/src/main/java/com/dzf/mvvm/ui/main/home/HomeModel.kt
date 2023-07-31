@@ -6,7 +6,9 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Observer
+import com.blankj.utilcode.util.ColorUtils
 import com.blankj.utilcode.util.ImageUtils
+import com.blankj.utilcode.util.ResourceUtils
 import com.dzf.mvvm.Config
 import com.dzf.mvvm.R
 import com.dzf.mvvm.api.URLConstant
@@ -61,6 +63,23 @@ class HomeModel : BaseViewModel<FragmentHomeBinding>() {
                 vb.refreshLayout.finishRefresh()
                 Config?.doubleIterator = it
                 vb.tvHomeDoctorName.text = it?.name
+                vb.ivHomeStatus.setImageResource(R.mipmap.certified_bac)
+                vb.tvHomeStatus.setTextColor(ColorUtils.getColor(R.color.white))
+                when(it?.status){
+                    "revise" ->
+                        vb.tvHomeStatus?.text = "已认证"
+                    "common" ->
+                        vb.tvHomeStatus?.text = "已认证"
+                    "init" ->
+                        vb.tvHomeStatus?.text = "未认证"
+                    "refuse" ->
+                        vb.tvHomeStatus?.text = "被驳回"
+                    "logout" ->
+                        vb.tvHomeStatus?.text = "注销"
+                    "seal","hangup" ->
+                        vb.tvHomeStatus?.text = "挂起"
+                }
+
                 GlideUtils.loadCircleImage(
                     fragment.requireActivity(),
                     URLConstant.IMG_IP + it?.headPath,
