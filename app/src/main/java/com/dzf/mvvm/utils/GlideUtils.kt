@@ -7,7 +7,9 @@ import android.widget.ImageView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.bumptech.glide.request.RequestOptions
+import com.dzf.mvvm.App
 import com.dzf.mvvm.R
+import com.dzf.mvvm.api.URLConstant
 import jp.wasabeef.glide.transformations.RoundedCornersTransformation
 
 /**
@@ -165,5 +167,19 @@ class GlideUtils {
             Glide.with(context).load(url).apply(options).into(imageView)
         }
 
+        /**
+         * 加载网路图片的统一处理
+         *
+         * @param iv
+         * @param url
+         */
+        fun loadHttpImg(mcontext:Context,iv: ImageView?, url: String?) {
+            iv?.let {
+                Glide.with(mcontext)
+                    .load(URLConstant.IMG_IP+url)
+                    .error(R.drawable.icon_load_img_off)
+                    .into(it)
+            }
+        }
     }
 }

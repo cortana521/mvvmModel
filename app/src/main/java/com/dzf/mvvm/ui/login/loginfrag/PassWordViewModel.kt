@@ -33,6 +33,7 @@ class PassWordViewModel : BaseViewModel<FragmentLoginPasswordBinding>() {
     override fun observe(fragment: Fragment, owner: LifecycleOwner) {
         articlesData?.observe(owner, {
             it?.let { it1 ->
+                Config.token = it1?.token.toString()
                 SPUtils.getInstance()?.put(Config.TOKEN, it1?.token)
                 SPUtils.getInstance()?.put(Config.UID, it1?.doctorNo)
                 SPUtils.getInstance()?.put(Config.USER_AREANO, it1?.areaNo)

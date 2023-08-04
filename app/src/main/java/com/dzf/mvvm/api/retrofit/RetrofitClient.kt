@@ -51,6 +51,7 @@ class RetrofitClient {
             .cookieJar(cookieJar)
             //处理多BaseUrl,添加应用拦截器
             .addInterceptor(MoreBaseUrlInterceptor())
+            // 头部
             .addInterceptor(TokenHeaderInterceptor())
             .addInterceptor(LoggingInterceptor())
             .sslSocketFactory(SSLContextSecurity.createIgnoreVerifySSL("TLS"))
@@ -87,7 +88,8 @@ class RetrofitClient {
                     .build()
 
                 //获取处理后的新newRequest
-                val newRequest = builder.url(newHttpUrl).build()
+                val newRequest = builder.url(newHttpUrl)
+                    .build()
                 chain.proceed(newRequest)
             } else {
                 chain.proceed(originalRequest)

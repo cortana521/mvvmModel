@@ -1,6 +1,7 @@
 package com.dzf.mvvm.ui.main.adapter
 
 import android.app.Activity
+import android.content.Context
 import com.blankj.utilcode.util.ToastUtils
 import com.dzf.mvvm.base.BaseAdapter
 import com.dzf.mvvm.databinding.ItemHomeFuncBinding
@@ -13,7 +14,7 @@ import com.dzf.mvvm.widget.clicks
  * @Time : 2021/12/13 15:24
  * @Description : 文件描述
  */
-class HomeFuncAdapter(mContext: Activity, list: ArrayList<HomeFuncItemBean>) :
+class HomeFuncAdapter(mContext: Context, list: List<HomeFuncItemBean>) :
     BaseAdapter<ItemHomeFuncBinding, HomeFuncItemBean>(
         mContext, list
     ) {

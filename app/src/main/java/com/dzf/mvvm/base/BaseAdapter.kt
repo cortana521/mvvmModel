@@ -1,6 +1,7 @@
 package com.dzf.mvvm.base
 
 import android.app.Activity
+import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -14,8 +15,8 @@ import java.lang.reflect.ParameterizedType
  * 如果item有需求要设置为固定宽高，可以在子类的convert方法里，通过代码设置
  */
 abstract class BaseAdapter<VB : ViewBinding, T>(
-    var mContext: Activity,
-    var listDatas: ArrayList<T>
+    var mContext: Context,
+    var listDatas: List<T>
 ) : RecyclerView.Adapter<BaseViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BaseViewHolder {

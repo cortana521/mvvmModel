@@ -28,7 +28,6 @@ import kotlinx.android.synthetic.main.fragment_home.*
  * @Description : 首页
  */
 class HomeFragment : BaseFragment<HomeModel, FragmentHomeBinding>(), View.OnClickListener {
-    var adapter: HomeFuncAdapter? = null
     var list: ArrayList<HomeFuncItemBean>? = ArrayList()
     var page: Int = 0
 
@@ -49,13 +48,13 @@ class HomeFragment : BaseFragment<HomeModel, FragmentHomeBinding>(), View.OnClic
                     .setMessage("是否提交数据?")
                     .setNegativeButton(
                         StringUtils.getString(R.string.app_determine_btn),
-                        DialogInterface.OnClickListener { p0, p1 ->
+                        DialogInterface.OnClickListener { p0, _ ->
                             p0.dismiss()
                         })
                     .setMessageColor(R.color.black)
                     .setPositiveButton(
                         StringUtils.getString(R.string.app_cancel_btn),
-                        DialogInterface.OnClickListener { dialog, which ->
+                        DialogInterface.OnClickListener { dialog, _ ->
                             dialog.dismiss()
                         })
                     .setWith(0.8f)
@@ -75,7 +74,7 @@ class HomeFragment : BaseFragment<HomeModel, FragmentHomeBinding>(), View.OnClic
         CommonlyUsedInterface.setViewClick(this, vb.rlGaoAuxiliary)
         CommonlyUsedInterface.setViewClick(this, vb.rlAcupuncture)
         vb.refreshLayout.setOnRefreshLoadMoreListener(object : OnRefreshLoadMoreListener {
-            override fun onRefresh(refreshLayout: RefreshLayout) {
+            override fun onRefresh(re0freshLayout: RefreshLayout) {
                 vm.getDoctorMsg(mActivity)
             }
 
@@ -90,8 +89,7 @@ class HomeFragment : BaseFragment<HomeModel, FragmentHomeBinding>(), View.OnClic
         vm.getDoctorMsg(mActivity)
         list?.addAll(vm.setHomeFuncData()!!)
         vb.rcyHome.layoutManager = GridLayoutManager(mActivity, 4)
-        adapter = list?.let { HomeFuncAdapter(mActivity, it) }
-        vb.rcyHome.adapter = adapter
+        vb.rcyHome.adapter = list?.let { HomeFuncAdapter(mActivity, it) }
         vb.refreshLayout.setEnableLoadMore(false)
     }
 

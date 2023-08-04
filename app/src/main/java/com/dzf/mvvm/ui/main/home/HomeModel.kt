@@ -2,23 +2,26 @@ package com.dzf.mvvm.ui.main.home
 
 import android.annotation.SuppressLint
 import android.content.Context
+import android.content.Intent
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Observer
 import com.blankj.utilcode.util.ColorUtils
-import com.blankj.utilcode.util.ImageUtils
-import com.blankj.utilcode.util.ResourceUtils
 import com.dzf.mvvm.Config
 import com.dzf.mvvm.R
 import com.dzf.mvvm.api.URLConstant
 import com.dzf.mvvm.base.BaseViewModel
 import com.dzf.mvvm.databinding.FragmentHomeBinding
+import com.dzf.mvvm.ui.main.adapter.BannerImageAdapter
 import com.dzf.mvvm.ui.main.model.ArticleListBean
+import com.dzf.mvvm.ui.main.model.BannerInfoResponse
 import com.dzf.mvvm.ui.main.model.DoctorInfRequest
 import com.dzf.mvvm.ui.main.model.HomeFuncItemBean
 import com.dzf.mvvm.utils.GlideUtils
 import com.dzf.mvvm.utils.SysUtils
+import com.dzf.mvvm.web.WebViewActivity
+import com.youth.banner.indicator.CircleIndicator
 
 /**
  * @ProjectName : MVVM
@@ -30,6 +33,7 @@ class HomeModel : BaseViewModel<FragmentHomeBinding>() {
 
     private var articlesData = MutableLiveData<ArticleListBean>()
     private var doctorMsg = MutableLiveData<DoctorInfRequest>()
+    private var mBannerList = MutableLiveData<BannerInfoResponse>()
     private var mContext: Context? = null
 
     fun getArticleList(page: Int, isShowLoading: Boolean = false) {
@@ -48,6 +52,11 @@ class HomeModel : BaseViewModel<FragmentHomeBinding>() {
         }, doctorMsg, isShowLoading = true)
     }
 
+    private fun getBannerImgList() {
+        launch({ httpUtil.getDoctorSlideBanner() }, mBannerList, isShowLoading = false)
+    }
+
+
     @SuppressLint("NotifyDataSetChanged")
     override fun observe(fragment: Fragment, owner: LifecycleOwner) {
         articlesData.observe(owner, Observer {
@@ -60,12 +69,13 @@ class HomeModel : BaseViewModel<FragmentHomeBinding>() {
         /** 医生个人资料 */
         doctorMsg.observe(owner, {
             it.let {
+                getBannerImgList()
                 vb.refreshLayout.finishRefresh()
                 Config?.doubleIterator = it
                 vb.tvHomeDoctorName.text = it?.name
                 vb.ivHomeStatus.setImageResource(R.mipmap.certified_bac)
                 vb.tvHomeStatus.setTextColor(ColorUtils.getColor(R.color.white))
-                when(it?.status){
+                when (it?.status) {
                     "revise" ->
                         vb.tvHomeStatus?.text = "已认证"
                     "common" ->
@@ -76,7 +86,7 @@ class HomeModel : BaseViewModel<FragmentHomeBinding>() {
                         vb.tvHomeStatus?.text = "被驳回"
                     "logout" ->
                         vb.tvHomeStatus?.text = "注销"
-                    "seal","hangup" ->
+                    "seal", "hangup" ->
                         vb.tvHomeStatus?.text = "挂起"
                 }
 
@@ -86,6 +96,22 @@ class HomeModel : BaseViewModel<FragmentHomeBinding>() {
                     vb.civHeadPortrait
                 )
             }
+        })
+
+        /** 轮播图*/
+        mBannerList.observe(owner, { it ->
+            vb.banner.setAdapter(it?.slideList?.let { it1 -> BannerImageAdapter(it1) })
+                .addBannerLifecycleObserver(fragment.activity)
+                .setIndicator(CircleIndicator(fragment.activity))
+                .setOnBannerListener { _, position ->
+                    it.slideList[position]?.let {
+                        openWeb(
+                            it.title,
+                            it.needParam,
+                           it.link, ""
+                        )
+                    }
+                }
         })
     }
 
@@ -121,5 +147,20 @@ class HomeModel : BaseViewModel<FragmentHomeBinding>() {
         mData?.add(homeFuncItem10)
         mData?.add(homeFuncItem8)
         return mData!!
+    }
+
+    /**
+     * 点击banner事件
+     */
+    private fun openWeb(title: String, needParam: String, link: String, content: String) {
+        val intent = Intent(mContext,WebViewActivity::class.java)
+        //不需要传递参数
+        if (!needParam.isNullOrEmpty() && needParam == "y") intent?.putExtra("content", content)
+        intent?.putExtra(
+            "url",
+            URLConstant.IP + link + "?V=" + System.currentTimeMillis()
+        )
+        intent?.putExtra("title", title)
+        mContext?.startActivity(intent)
     }
 }

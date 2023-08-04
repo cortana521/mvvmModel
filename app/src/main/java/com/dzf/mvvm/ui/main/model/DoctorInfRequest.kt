@@ -39,5 +39,5 @@ data class DoctorInfRequest(
     val status: String,
     val tempAreaNo: String,
     val token: String,
-    val vCode: Any
+    val vCode: Int
 )

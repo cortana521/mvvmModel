@@ -7,7 +7,13 @@ import com.dzf.mvvm.ui.main.model.DoctorInfRequest
 import com.dzf.mvvm.ui.login.model.LoginResponse
 import com.dzf.mvvm.ui.login.model.RegisterResponse
 import com.dzf.mvvm.ui.main.model.ArticleListBean
+import com.dzf.mvvm.ui.main.model.BannerInfoResponse
+import okhttp3.MultipartBody
+import okhttp3.RequestBody
+import okhttp3.ResponseBody
 import retrofit2.http.*
+import java.util.*
+import kotlin.collections.HashMap
 
 
 interface ApiService {
@@ -53,4 +59,8 @@ interface ApiService {
     @POST("api/doctor/add")
     @FormUrlEncoded
     suspend fun getRegisterAccount(@FieldMap map: Map<String, String>): BaseResult<RegisterResponse>
+
+    @POST("api/doctor/slide/list")
+    suspend fun getDoctorSlideBanner():BaseResult<BannerInfoResponse>
+
 }
