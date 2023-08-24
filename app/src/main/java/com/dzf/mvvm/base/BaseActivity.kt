@@ -73,7 +73,7 @@ abstract class BaseActivity<VM : BaseViewModel<VB>, VB : ViewBinding> : AppCompa
      *
      * @return
      */
-    open fun initResources(): Resources? {
+    private fun initResources(): Resources? {
         val res: Resources = super.getResources()
         val config = Configuration()
         config.setToDefaults()
@@ -86,7 +86,7 @@ abstract class BaseActivity<VM : BaseViewModel<VB>, VB : ViewBinding> : AppCompa
     /**
      * 使用show、hide来管理fragment
      */
-    open fun showFragment(position: Int, fragments: List<Fragment>) {
+     fun showFragment(position: Int, fragments: List<Fragment>) {
         val fragment: Fragment = fragments.get(position)
         if (null != fragment && mCurrentFragment !== fragment) {
             val transaction: FragmentTransaction =
@@ -116,7 +116,7 @@ abstract class BaseActivity<VM : BaseViewModel<VB>, VB : ViewBinding> : AppCompa
         handleEvent(msg)
     }
 
-    open fun getClassName(): String? {
+     private fun getClassName(): String? {
         val className = "BaseActivity"
         try {
             return javaClass.name

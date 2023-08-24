@@ -12,7 +12,7 @@ import com.dzf.mvvm.utils.CommonlyUsedInterface
  * @ProjectName : mvvmModel
  * @Author : Dai Zhi Feng
  * @Time : 2023/2/14 13:58
- * @Description : 文件描述
+ * @Description : 设置页面
  */
 class SettingActivity : BaseActivity<SettingModel, ActivitySettingBinding>(), View.OnClickListener {
     override fun initView() {

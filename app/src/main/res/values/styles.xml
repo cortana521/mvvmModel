@@ -2,13 +2,23 @@
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
-        <item name="android:windowContentTransitions" tools:ignore="NewApi">true</item>
-        <item name="android:windowAllowEnterTransitionOverlap" tools:ignore="NewApi">true</item>
-        <item name="android:windowAllowReturnTransitionOverlap" tools:ignore="NewApi">true</item>
-        <item name="android:windowSharedElementEnterTransition" tools:ignore="NewApi">@android:transition/move</item>
-        <item name="android:windowSharedElementExitTransition" tools:ignore="NewApi">@android:transition/move</item>
-<!--        <item name="android:windowBackground">@mipmap/app_welcome_bg</item>-->
-        <item name="android:splitMotionEvents">false</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorPrimaryDark">@color/white</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowNoTitle">true</item>
+        <!--        <item name="android:windowBackground">@mipmap/app_welcome_bg</item>-->
+        <!--list分割线颜色-->
+        <item name="android:listDivider">@drawable/shape_divider_bg</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar.FullScreen">
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowBackground">@mipmap/app_welcome_bg</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
     </style>
 
     <!-- ToolBar菜单样式 -->

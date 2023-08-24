@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/dp_45"
+    android:background="@color/white"
+    android:orientation="horizontal"
+    android:gravity="center_vertical">
+
+    <ImageView
+        android:id="@+id/iv_left_back"
+        android:layout_width="@dimen/dp_20"
+        android:layout_height="match_parent"
+        android:src="@mipmap/arrow_left_back"
+        android:layout_marginLeft="15dp"
+        android:padding="@dimen/dp_05"
+        android:visibility="gone"
+        android:layout_marginRight="10dp"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_35"
+        android:layout_marginLeft="@dimen/dp_15"
+        android:layout_marginRight="@dimen/dp_15"
+        android:layout_weight="1"
+        android:background="@drawable/shape_f5f5_15dp"
+        android:focusable="true"
+        android:focusableInTouchMode="true">
+
+        <ImageView
+            android:id="@+id/shape_left"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/text_dimen_16"
+            android:src="@mipmap/shape_bac"
+            android:visibility="gone" />
+
+        <EditText
+            android:id="@+id/search_tv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/dp_40"
+            android:background="@null"
+            android:focusable="false"
+            android:maxLength="20"
+            android:singleLine="true"
+            android:lines="1"
+            android:inputType="text"
+            android:imeOptions="actionSearch"
+            android:textColor="@color/black3"
+            android:textSize="@dimen/text_dimen_14" />
+
+
+        <TextView
+            android:id="@+id/shape_center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@mipmap/shape_bac"
+            android:layout_centerVertical="true"
+            android:drawablePadding="@dimen/dp_08"
+            android:layout_centerHorizontal="true"
+            android:paddingLeft="@dimen/dp_05"
+            android:layout_marginLeft="@dimen/dp_05"
+            android:hint="搜索我的模板"
+            android:textColor="@color/d959394"
+            android:textSize="@dimen/text_dimen_13" />
+
+        <ImageView
+            android:id="@+id/image_view_del"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/dp_10"
+            android:src="@mipmap/search_template_del"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/tv_cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/dp_10"
+            android:text="取消"
+            android:textSize="@dimen/text_dimen_14"
+            android:textColor="@color/shape_status_bg"
+            android:visibility="gone"
+            android:layout_centerVertical="true"/>
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/tv_right_text"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:text="新增"
+        android:layout_marginRight="@dimen/dp_15"
+        android:gravity="center_vertical"
+        android:layout_marginLeft="@dimen/dp_15"
+        android:textSize="@dimen/text_dimen_15"
+        android:visibility="gone"
+        android:textColor="@color/black3"
+        />
+</LinearLayout>

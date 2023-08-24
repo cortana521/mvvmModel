@@ -1,5 +1,6 @@
 package com.dzf.mvvm.utils
 
+import android.annotation.SuppressLint
 import android.annotation.TargetApi
 import android.app.Activity
 import android.content.Context
@@ -52,7 +53,7 @@ object StatusBarUtil {
      * @param color          状态栏颜色值
      * @param statusBarAlpha 状态栏透明度
      */
-    fun setColor(activity: Activity, @ColorInt color: Int, statusBarAlpha: Int) {
+    private fun setColor(activity: Activity, @ColorInt color: Int, statusBarAlpha: Int) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             activity.window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)
             activity.window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS)
@@ -90,23 +91,22 @@ object StatusBarUtil {
      * @param color          状态栏颜色值
      * @param statusBarAlpha 状态栏透明度
      */
-    fun setColorForSwipeBack(activity: Activity, @ColorInt color: Int, statusBarAlpha: Int) {
+    private fun setColorForSwipeBack(activity: Activity, @ColorInt color: Int, statusBarAlpha: Int) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
             val contentView = activity.findViewById<View>(android.R.id.content) as ViewGroup
             val rootView = contentView.getChildAt(0)
             val statusBarHeight = getStatusBarHeight(activity)
             if (rootView != null && rootView is CoordinatorLayout) {
-                val coordinatorLayout = rootView
                 if (Build.VERSION.SDK_INT < Build.VERSION_CODES.LOLLIPOP) {
-                    coordinatorLayout.fitsSystemWindows = false
+                    rootView.fitsSystemWindows = false
                     contentView.setBackgroundColor(calculateStatusColor(color, statusBarAlpha))
                     val isNeedRequestLayout = contentView.paddingTop < statusBarHeight
                     if (isNeedRequestLayout) {
                         contentView.setPadding(0, statusBarHeight, 0, 0)
-                        coordinatorLayout.post { coordinatorLayout.requestLayout() }
+                        rootView.post { rootView.requestLayout() }
                     }
                 } else {
-                    coordinatorLayout.setStatusBarBackgroundColor(
+                    rootView.setStatusBarBackgroundColor(
                         calculateStatusColor(
                             color,
                             statusBarAlpha
@@ -208,7 +208,7 @@ object StatusBarUtil {
      *
      * @param activity 需要设置的activity
      */
-    fun setTransparent(activity: Activity) {
+    private fun setTransparent(activity: Activity) {
         if (Build.VERSION.SDK_INT < Build.VERSION_CODES.KITKAT) {
             return
         }
@@ -271,7 +271,7 @@ object StatusBarUtil {
      * @param color          状态栏颜色值
      * @param statusBarAlpha 状态栏透明度
      */
-    fun setColorForDrawerLayout(
+    private fun setColorForDrawerLayout(
         activity: Activity, drawerLayout: DrawerLayout, @ColorInt color: Int,
         statusBarAlpha: Int
     ) {
@@ -386,7 +386,7 @@ object StatusBarUtil {
      * @param activity     需要设置的activity
      * @param drawerLayout DrawerLayout
      */
-    fun setTranslucentForDrawerLayout(
+    private fun setTranslucentForDrawerLayout(
         activity: Activity,
         drawerLayout: DrawerLayout,
         statusBarAlpha: Int

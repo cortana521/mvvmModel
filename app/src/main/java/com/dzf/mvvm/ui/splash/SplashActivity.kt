@@ -3,6 +3,7 @@ package com.dzf.mvvm.ui.splash
 import android.Manifest
 import android.content.Intent
 import android.content.pm.PackageManager
+import android.graphics.Color
 import android.os.Build
 import android.widget.Toast
 import androidx.core.content.ContextCompat
@@ -16,6 +17,7 @@ import com.dzf.mvvm.base.BaseViewModel
 import com.dzf.mvvm.dialog.PrivacyDialog
 import com.dzf.mvvm.ui.login.LoginActivity
 import com.dzf.mvvm.ui.main.MainActivity
+import com.dzf.mvvm.utils.StatusBarUtil
 import com.dzf.mvvm.utils.SysUtils
 import java.util.*
 
@@ -37,7 +39,6 @@ class SplashActivity : BaseActivity<BaseViewModel<ActivitySplashBinding>, Activi
 
     private fun init() {
         SysUtils.initFiles()
-//            getjumpActivity(ActivityARouter.LOGIN)
         if (SPUtils.getInstance().getString(Config.TOKEN).isNullOrEmpty()) {
             startActivity(Intent(this, LoginActivity::class.java))
         } else {

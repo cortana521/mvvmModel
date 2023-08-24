@@ -31,8 +31,7 @@ class MainActivity : BaseActivity<MainActivityViewModel, ActivityMainBinding>() 
     private var messageFragment = MessageFragment()
     private var mineFragment = MineFragment()
     private var fragments: List<Fragment> = listOf(
-        homeFragment,
-        userFragment, messageFragment, mineFragment
+        userFragment,  mineFragment
     )
 
     override fun initView() {
@@ -49,21 +48,21 @@ class MainActivity : BaseActivity<MainActivityViewModel, ActivityMainBinding>() 
             return@OnNavigationItemSelectedListener true
         }
         when (item.itemId) {
-            R.id.tab_home -> {
-                StatusBarUtil.setColorNoTranslucent(this, ColorUtils.getColor(R.color.toolbar))
-                showFragment(0,fragments);
-            }
+//            R.id.tab_home -> {
+//                StatusBarUtil.setColorNoTranslucent(this, ColorUtils.getColor(R.color.toolbar))
+//                showFragment(0,fragments);
+//            }
             R.id.tab_user -> {
                 StatusBarUtil.setColorNoTranslucent(this, ColorUtils.getColor(R.color.white))
-                showFragment(1,fragments);
+                showFragment(0,fragments);
             }
-            R.id.tab_message -> {
-                StatusBarUtil.setColorNoTranslucent(this, ColorUtils.getColor(R.color.white))
-                showFragment(2,fragments);
-            }
+//            R.id.tab_message -> {
+//                StatusBarUtil.setColorNoTranslucent(this, ColorUtils.getColor(R.color.white))
+//                showFragment(2,fragments);
+//            }
             R.id.tab_mine -> {
                 StatusBarUtil.setColorNoTranslucent(this, ColorUtils.getColor(R.color.white))
-                showFragment(3,fragments);
+                showFragment(1,fragments);
             }
         }
         true

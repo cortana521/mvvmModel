@@ -26,7 +26,7 @@ class UserFragment : BaseFragment<UserModel, FragmentUserBinding>() {
     override fun initView() {
         vb.layoutTitle
             .setRightTextVisible(false)
-            .setCenterTitleText(resources.getString(R.string.app_home_user))
+            .setCenterTitleText(resources.getString(R.string.app_tab_home))
             .setCenterTitleTextColor(ColorUtils.getColor(R.color.black))
             .setLeftImgVisible(false)
             .setTitleBackColor(ColorUtils.getColor(R.color.white))
