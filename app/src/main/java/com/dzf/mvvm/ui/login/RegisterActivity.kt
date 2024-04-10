@@ -30,14 +30,15 @@ class RegisterActivity : BaseActivity<RegisterViewModel, ActivityRegisterBinding
         override fun handleMessage(msg: Message) {
             super.handleMessage(msg)
             when (msg.what) {
-                0x0001 ->
-                    vm.initAddressPicker(this@RegisterActivity)
+//                0x0001 ->
+//                    vm.initAddressPicker(this@RegisterActivity)
             }
         }
     }
 
     override fun initView() {
-        mHandler.sendEmptyMessage(0x0001)
+        //不使用
+//        mHandler.sendEmptyMessage(0x0001)
         vb.layoutTitle
             .setRightTextVisible(false)
             .setCenterTitleText(StringUtils.getString(R.string.app_register_title))
@@ -53,11 +54,7 @@ class RegisterActivity : BaseActivity<RegisterViewModel, ActivityRegisterBinding
     }
 
     override fun initClick() {
-        CommonlyUsedInterface.setViewClick(this, vb.etSex)
-        CommonlyUsedInterface.setViewClick(this, vb.tvLoginGetCode)
-        CommonlyUsedInterface.setViewClick(this, vb.etRegisterCityrname)
         CommonlyUsedInterface.setViewClick(this, vb.tvRegister)
-        CommonlyUsedInterface.setViewClick(this, vb.cbLoginPwd)
     }
 
     override fun initData() {
@@ -81,27 +78,10 @@ class RegisterActivity : BaseActivity<RegisterViewModel, ActivityRegisterBinding
 
     override fun onClick(v: View?) {
         when (v?.id) {
-            R.id.tv_login_get_code ->
-                vm.getPhoneCode()
-            R.id.et_sex ->
-                showDialog(
-                    StringUtils.getString(R.string.app_sex_man),
-                    StringUtils.getString(R.string.app_sex_gril)
-                )
-            R.id.et_register_cityrname ->
-                vm.showPickerView(this)
             R.id.tv_register ->
                 vm.getRegisterAccount()
             R.id.cb_login_pwd ->
                 ""
         }
-    }
-
-    override fun getTakingPicturesClick() {
-        vb.etSex.setText(StringUtils.getString(R.string.app_sex_man))
-    }
-
-    override fun getPhotoAlbumClick() {
-        vb.etSex.setText(StringUtils.getString(R.string.app_sex_gril))
     }
 }

@@ -42,13 +42,7 @@ class MineFragment : BaseFragment<MineModel, FragmentMineBinding>() {
     }
 
     override fun initData() {
-        Config?.doubleIterator?.name?.let { vm.setdoctorName(it) }
-        Config?.doubleIterator?.headPath.let {
-            vm.setDoctorHead(
-                requireContext(),
-                URLConstant.IMG_IP + it
-            )
-        }
+
     }
 
     override fun lazyLoadData() {

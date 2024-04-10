@@ -48,7 +48,7 @@ class CodeViewLogin : BaseViewModel<FragmentLoginCodeBinding>() {
             ToastUtils.showShort("请输入验证码")
             return
         }
-        launch({ httpUtil.getPasswordLogin(phone, password, code) }, loginData, isShowLoading)
+        launch({ httpUtil.getPasswordLogin(phone, password) }, loginData, isShowLoading)
     }
 
     override fun observe(fragment: Fragment, owner: LifecycleOwner) {

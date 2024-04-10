@@ -24,7 +24,7 @@ class PassWordViewModel : BaseViewModel<FragmentLoginPasswordBinding>() {
 
     fun getLoginMessage(phone: String, password: String, isShowLoading: Boolean = true) {
         launch(
-            { httpUtil.getPasswordLogin(phone, password, android.os.Build.MODEL) },
+            { httpUtil.getPasswordLogin(phone, password) },
             articlesData,
             isShowLoading
         )
@@ -34,11 +34,6 @@ class PassWordViewModel : BaseViewModel<FragmentLoginPasswordBinding>() {
         articlesData?.observe(owner, {
             it?.let { it1 ->
                 Config.token = it1?.token.toString()
-                SPUtils.getInstance()?.put(Config.TOKEN, it1?.token)
-                SPUtils.getInstance()?.put(Config.UID, it1?.doctorNo)
-                SPUtils.getInstance()?.put(Config.USER_AREANO, it1?.areaNo)
-                SPUtils.getInstance()?.put(Config.USER_ROLE, it1?.role)
-                SPUtils.getInstance()?.put(Config.USER_SIG, it1?.sig)
                 fragment.startActivity(Intent(fragment.activity, MainActivity::class.java))
                 fragment.activity?.finish()
             }

@@ -39,7 +39,7 @@ class RetrofitClient {
         retrofit = Retrofit.Builder()
             .client(getOkHttpClient())
             .addConverterFactory(GsonConverterFactory.create())
-            .baseUrl(URLConstant.IP)
+            .baseUrl(URLConstant.BASE_URL_RELEASE)
             .build()
     }
 
@@ -77,9 +77,10 @@ class RetrofitClient {
                 //根据头信息中配置的value,来匹配新的base_url地址
                 if ("article" == urlname) {
                     baseURL = HttpUrl.parse(URLConstant.BASE_URL_RELEASE)
-                } else if ("mdffx" == urlname) {
-                    baseURL = HttpUrl.parse(URLConstant.IP)
                 }
+//                else if ("mdffx" == urlname) {
+//                    baseURL = HttpUrl.parse(URLConstant.BASE_URL_RELEASE)
+//                }
                 //重建新的HttpUrl，需要重新设置的url部分
                 val newHttpUrl = oldUrl.newBuilder()
                     .scheme(baseURL!!.scheme()) //http协议如：http或者https

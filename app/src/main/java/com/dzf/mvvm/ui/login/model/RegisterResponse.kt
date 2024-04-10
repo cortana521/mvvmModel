@@ -9,10 +9,11 @@ import com.google.gson.annotations.SerializedName
  * @Description : 文件描述
  */
 class RegisterResponse {
-    var doctorNo: String? = null
-    var areaNo: String? = null
-    var phone: String? = null
-    var name: String? = null
+    var email: String? = null
+    var id: Int? = 0
+    var icon: String? = null
+    var nickname: String? = null
+    var publicName: String? = null
     var sex: String? = null
     var headPath: String? = null
     var token: String? = null

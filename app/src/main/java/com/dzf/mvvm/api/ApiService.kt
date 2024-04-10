@@ -26,20 +26,28 @@ interface ApiService {
     suspend fun getArticleList(@Path("page") page: Int): BaseResult<ArticleListBean>
 
     /**
+     * 注册
+     */
+    @POST("user/register")
+    @FormUrlEncoded
+    suspend fun getRegister(
+        @Field("username") username: String, @Field("password") password: String,
+        @Field("repassword") repassword: String
+    ): BaseResult<RegisterResponse>
+
+    /**
      * 登录
      */
-    @POST("api/doctor/login")
+    @POST("user/login")
     @FormUrlEncoded
     suspend fun getPasswordLogin(
-        @Field("mobile") mobile: String, @Field("loginPwd") loginPwd: String,
-        @Field("device") code: String
-    )
-            : BaseResult<LoginResponse>
+        @Field("username") username: String, @Field("password") password: String
+    ): BaseResult<LoginResponse>
 
     /**
      * 退出
      */
-    @POST("api/doctor/logout")
+    @GET("user/logout/json")
     suspend fun getLoginOut(): BaseResult<String>
 
     /**
@@ -61,6 +69,6 @@ interface ApiService {
     suspend fun getRegisterAccount(@FieldMap map: Map<String, String>): BaseResult<RegisterResponse>
 
     @POST("api/doctor/slide/list")
-    suspend fun getDoctorSlideBanner():BaseResult<BannerInfoResponse>
+    suspend fun getDoctorSlideBanner(): BaseResult<BannerInfoResponse>
 
 }

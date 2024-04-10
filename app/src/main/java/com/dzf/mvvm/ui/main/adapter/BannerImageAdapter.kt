@@ -36,10 +36,7 @@ class BannerImageAdapter(mData: List<DataBeanResponse>) :
     ) {
         data?.imgUrl?.let {
             holder?.imageView?.let { it1 ->
-                GlideUtils.loadHttpImg(
-                    it1?.context, holder.imageView,
-                    it
-                )
+
             }
         }
     }

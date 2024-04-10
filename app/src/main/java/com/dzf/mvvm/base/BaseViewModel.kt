@@ -145,16 +145,16 @@ open class BaseViewModel<VB : ViewBinding> : ViewModel() {
         viewModelScope.launch {
             try {
                 val result = block()
-                when (result.status) {
+                when (result.errorCode) {
                     0,1 -> {//请求成功
                         liveData.value = result.data
                     }
                     2 -> {//token失效
-                        getDataTokenExpiration(result.status)
+                        getDataTokenExpiration(result.errorCode)
                     }
                     else -> {
-                        LogUtils.e("请求错误>>" + result.msg)
-                        showError(ErrorResult(result.status, result.msg, isShowError))
+                        LogUtils.e("请求错误>>" + result.errorMsg)
+                        showError(ErrorResult(result.errorCode, result.errorMsg, isShowError))
                     }
                 }
             } catch (e: Throwable) {//接口请求失败

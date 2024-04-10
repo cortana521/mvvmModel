@@ -166,20 +166,5 @@ class GlideUtils {
                 .diskCacheStrategy(strategy)
             Glide.with(context).load(url).apply(options).into(imageView)
         }
-
-        /**
-         * 加载网路图片的统一处理
-         *
-         * @param iv
-         * @param url
-         */
-        fun loadHttpImg(mcontext:Context,iv: ImageView?, url: String?) {
-            iv?.let {
-                Glide.with(mcontext)
-                    .load(URLConstant.IMG_IP+url)
-                    .error(R.drawable.icon_load_img_off)
-                    .into(it)
-            }
-        }
     }
 }

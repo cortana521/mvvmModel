@@ -35,7 +35,7 @@ class HomeFragment : BaseFragment<HomeModel, FragmentHomeBinding>(), View.OnClic
         StatusBarUtil.setColorNoTranslucent(mActivity, ColorUtils.getColor(R.color.toolbar))
         vb.layoutTitle
             .setRightTextVisible(false)
-            .setRightText(StringUtils.getString(R.string.app_home_title))
+            .setCenterTitleText(StringUtils.getString(R.string.app_home_title))
             .setCenterTitleTextColor(ColorUtils.getColor(R.color.shape_status_bg))
             .setRightImg(ResourceUtils.getDrawable(R.mipmap.saoyisao))
             .setLeftImgVisible(false)

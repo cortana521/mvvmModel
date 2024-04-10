@@ -31,7 +31,7 @@ class Config {
         var token = ""
 
         //用户phone
-        const val UPHONE = "phone"
+        const val NAME = "name"
 
         //医生验证信息
         const val QUALIFICATION_INF = "qualification_inf"

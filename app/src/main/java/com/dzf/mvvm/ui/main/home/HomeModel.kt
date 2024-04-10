@@ -89,12 +89,6 @@ class HomeModel : BaseViewModel<FragmentHomeBinding>() {
                     "seal", "hangup" ->
                         vb.tvHomeStatus?.text = "挂起"
                 }
-
-                GlideUtils.loadCircleImage(
-                    fragment.requireActivity(),
-                    URLConstant.IMG_IP + it?.headPath,
-                    vb.civHeadPortrait
-                )
             }
         })
 
@@ -156,10 +150,6 @@ class HomeModel : BaseViewModel<FragmentHomeBinding>() {
         val intent = Intent(mContext,WebViewActivity::class.java)
         //不需要传递参数
         if (!needParam.isNullOrEmpty() && needParam == "y") intent?.putExtra("content", content)
-        intent?.putExtra(
-            "url",
-            URLConstant.IP + link + "?V=" + System.currentTimeMillis()
-        )
         intent?.putExtra("title", title)
         mContext?.startActivity(intent)
     }
